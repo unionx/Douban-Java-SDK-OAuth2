@@ -1,55 +1,98 @@
 package com.dongxuexidu.douban4j.model.subject;
 
-import com.dongxuexidu.douban4j.model.IDoubanObject;
-import com.dongxuexidu.douban4j.model.common.DoubanAttributeObj;
-import com.dongxuexidu.douban4j.model.common.DoubanAuthorObj;
-import com.dongxuexidu.douban4j.model.common.DoubanCategoryObj;
-import com.dongxuexidu.douban4j.model.common.DoubanLinkObj;
-import com.dongxuexidu.douban4j.model.common.DoubanRatingObj;
-import com.dongxuexidu.douban4j.model.common.DoubanTagObj;
-import com.google.api.client.util.Key;
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
+
+import com.dongxuexidu.douban4j.model.IDoubanObject;
+import com.dongxuexidu.douban4j.model.common.*;
+import com.dongxuexidu.douban4j.model.v2.DoubanCastObject;
+import com.dongxuexidu.douban4j.model.v2.DoubanDirectorObj;
+import com.dongxuexidu.douban4j.model.v2.DoubanRatingObj;
+import com.google.api.client.util.Key;
 
 /**
+ * 
+ * @author Sean Guo <seanguo85@qq.com>
  *
- * @author Zhibo Wei <uglytroll@dongxuexidu.com>
  */
 public class DoubanSubjectObj implements IDoubanObject {
-
-  @Override
-  public String getObjName() {
-    return "subject";
-  }
   
-  @Key("category")
-  private DoubanCategoryObj category;
-  
-  @Key("author")
-  private List<DoubanAuthorObj> authors = new ArrayList<DoubanAuthorObj>();
+  @Key
+  private DoubanRatingObj rating;
   
   @Key
   private String title;
   
-  @Key("summary")
-  private String summary;
+  @Key
+  private String original_title;
   
-  @Key("link")
-  private List<DoubanLinkObj> links = new ArrayList<DoubanLinkObj>();
+  @Key
+  private String year;
+
+  @Key
+  private DoubanCategoryObj category;
   
-  @Key("db:tag")
-  private List<DoubanTagObj> tags = new ArrayList<DoubanTagObj>();
+  @Key
+  private String subtype;
   
-  @Key("db:attribute")
-  private List<DoubanAttributeObj> attributes = new ArrayList<DoubanAttributeObj>();
+  @Key
+  private DoubanImageObj images;
+  
+  @Key
+  private String alt;
   
   @Key
   private String id;
   
-  @Key("gd:rating")
-  private DoubanRatingObj rating;
+  @Key
+  private String summary;
+
+  @Key
+  private List<DoubanTagObj> tags = new ArrayList<DoubanTagObj>();
+  
+  @Key
+  private List<DoubanCastObject> casts = new ArrayList<DoubanCastObject>();
+  
+  @Key
+  private List<DoubanDirectorObj> directors = new ArrayList<>();
+  
+  @Key
+  private List<String> aka = new ArrayList<>();
+  
+  @Key
+  private List<String> genres = new ArrayList<>();
+  
+  @Key
+  private List<String> countries = new ArrayList<>();
+
+  @Key("db:author")
+  private List<DoubanAuthorObj> authors = new ArrayList<>();
+
+  @Key("db:attribute")
+  private List<DoubanAttributeObj> attributes = new ArrayList<>();
+  
+  @Key
+  private int comments_count;
+  
+  @Key
+  private int ratings_count;
+
+  @Override
+  public String getObjName() {
+    return "DoubanSubjectObj";
+  }
+
+  public DoubanRatingObj getRating() {
+    return rating;
+  }
+
+  public String getTitle() {
+    return title;
+  }
+
+  public String getOriginal_title() {
+    return original_title;
+  }
 
   /**
    * @return the category
@@ -58,11 +101,29 @@ public class DoubanSubjectObj implements IDoubanObject {
     return category;
   }
 
-  /**
-   * @param category the category to set
-   */
-  public void setCategory(DoubanCategoryObj category) {
-    this.category = category;
+
+  public String getYear() {
+    return year;
+  }
+
+  public String getSubtype() {
+    return subtype;
+  }
+
+  public DoubanImageObj getImages() {
+    return images;
+  }
+
+  public List<DoubanTagObj> getTags() {
+    return tags;
+  }
+
+  public void setTags(List<DoubanTagObj> tags) {
+    this.tags = tags;
+  }
+
+  public String getAlt() {
+    return alt;
   }
 
   /**
@@ -84,44 +145,6 @@ public class DoubanSubjectObj implements IDoubanObject {
   }
 
   /**
-   * @return the title
-   */
-  public String getTitle() {
-    return title;
-  }
-
-  /**
-   * @param title the title to set
-   */
-  public void setTitle(String title) {
-    this.title = title;
-  }
-
-  /**
-   * @param links the links to set
-   */
-  public void setLinks(List<DoubanLinkObj> links) {
-    this.links = links;
-  }
-
-  public void addLink(DoubanLinkObj link) {
-    this.links.add(link);
-  }
-  
-  public String getLinkByRel (String rel) {
-    for (DoubanLinkObj obj : this.links) {
-      if (obj.getRel().equalsIgnoreCase(rel)) {
-        return obj.getHref();
-      }
-    }
-    return null;
-  }
-  
-  public List<DoubanLinkObj> getLinks() {
-    return this.links;
-  }
-
-  /**
    * @return the attributes
    */
   public List<DoubanAttributeObj> getAttributes() {
@@ -129,72 +152,49 @@ public class DoubanSubjectObj implements IDoubanObject {
   }
 
   /**
-   * @param attributes the attributes to set
+   * @param attribute the attribute to set
    */
   public void addAttribute(DoubanAttributeObj attribute) {
     this.attributes.add(attribute);
   }
 
-  /**
-   * @return the id
-   */
-  public String getId() {
-    return id;
-  }
-
-  /**
-   * @param id the id to set
-   */
   public void setId(String id) {
     this.id = id;
   }
 
-  /**
-   * @return the rating
-   */
-  public DoubanRatingObj getRating() {
-    return rating;
+  public String getId() {
+    return id;
   }
 
-  /**
-   * @param rating the rating to set
-   */
-  public void setRating(DoubanRatingObj rating) {
-    this.rating = rating;
-  }
-
-  /**
-   * @return the tags
-   */
-  public List<DoubanTagObj> getTags() {
-    return tags;
-  }
-
-  /**
-   * @param tags the tags to set
-   */
-  public void setTags(List<DoubanTagObj> tags) {
-    this.tags = tags;
-  }
-  
-  public void addTag (DoubanTagObj tag) {
-    if (this.tags == null) {
-      this.tags = new ArrayList<DoubanTagObj>();
-    }
-    this.tags.add(tag);
-  }
-
-  /**
-   * @return the summary
-   */
   public String getSummary() {
     return summary;
   }
 
-  /**
-   * @param summary the summary to set
-   */
-  public void setSummary(String summary) {
-    this.summary = summary;
+  public List<DoubanCastObject> getCasts() {
+    return casts;
+  }
+
+  public List<String> getAka() {
+    return aka;
+  }
+
+  public int getComments_count() {
+    return comments_count;
+  }
+
+  public int getRatings_count() {
+    return ratings_count;
+  }
+
+  public List<String> getGenres() {
+    return genres;
+  }
+
+  public List<String> getCountries() {
+    return countries;
+  }
+
+  public List<DoubanDirectorObj> getDirectors() {
+    return directors;
   }
 }

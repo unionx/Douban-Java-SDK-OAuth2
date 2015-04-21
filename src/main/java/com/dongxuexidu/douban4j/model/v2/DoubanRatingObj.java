@@ -22,6 +22,12 @@ public class DoubanRatingObj implements IDoubanObject {
   @Key
   private int min;
 
+  @Key
+  private int value;
+
+  @Key("@numRaters")
+  private int numberOfRaters = 0;
+
   @Override
   public String getObjName() {
     return "DoubanRatingObj";
@@ -41,6 +47,27 @@ public class DoubanRatingObj implements IDoubanObject {
 
   public int getMin() {
     return min;
+  }
+
+  /**
+   * @return the value
+   */
+  public int getValue() {
+    return value;
+  }
+
+  /**
+   * @return the numberOfRaters
+   */
+  public int getNumberOfRaters() {
+    return numberOfRaters;
+  }
+
+  /**
+   * @param numberOfRaters the numberOfRaters to set
+   */
+  public void setNumberOfRaters(int numberOfRaters) {
+    this.numberOfRaters = numberOfRaters;
   }
 
   @Override

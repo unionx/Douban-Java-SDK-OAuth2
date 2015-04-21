@@ -5,6 +5,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.logging.Logger;
 
+import com.dongxuexidu.douban4j.constants.DefaultConfigs;
 import org.apache.http.NameValuePair;
 import org.apache.http.message.BasicNameValuePair;
 
@@ -61,9 +62,9 @@ public class DoubanBookMovieMusicService extends DoubanService {
     return movie;
   }
 
-  public com.dongxuexidu.douban4j.model.v2.DoubanSubjectObj getV2MovieInfoById(long movieId) throws DoubanException, IOException {
+  public DoubanSubjectObj getV2MovieInfoById(long movieId) throws DoubanException, IOException {
     String url = RequestUrls.DOUBAN_MOVIE_V2_SUBJECT_PREFIX + "/" + movieId;
-    com.dongxuexidu.douban4j.model.v2.DoubanSubjectObj movie = this.client.getResponseInJson(url, null, com.dongxuexidu.douban4j.model.v2.DoubanSubjectObj.class, false);
+    DoubanSubjectObj movie = this.client.getResponseInJson(url, null, DoubanSubjectObj.class, false);
     return movie;
   }
 
@@ -94,7 +95,7 @@ public class DoubanBookMovieMusicService extends DoubanService {
   }
   
   public DoubanSubjectFeedObj searchMusic (String q, String tag) throws DoubanException, IOException {
-    String url = RequestUrls.DOUBAN_MUSIC_SUBJECT_PREFIX + "s";
+    String url = RequestUrls.DOUBAN_MUSIC_SUBJECT_PREFIX + "/search";
     return searchSubject(url, q, tag, null, null);
   }
   
@@ -103,7 +104,10 @@ public class DoubanBookMovieMusicService extends DoubanService {
     return searchSubject(url, q, tag, startIndex, maxResult);
   }
   
-  private DoubanSubjectFeedObj searchSubject (String url, String q, String tag, Integer startIndex, Integer maxResult) throws DoubanException, IOException {
+  private DoubanSubjectFeedObj searchSubject (String url, String q, String tag,
+                                              Integer startIndex, Integer maxResult)
+          throws DoubanException, IOException {
+
     List<NameValuePair> params = new ArrayList<NameValuePair>();
     if (q != null && q.length() > 0) {
       params.add(new BasicNameValuePair("q", q));
@@ -120,6 +124,10 @@ public class DoubanBookMovieMusicService extends DoubanService {
     if (maxResult != null) {
       params.add(new BasicNameValuePair("max-results", maxResult.toString()));
     }
+    if (DefaultConfigs.TEST_API_KEY != null){
+      params.add(new BasicNameValuePair("apikey", DefaultConfigs.TEST_API_KEY));
+    }
+
     DoubanSubjectFeedObj result = this.client.getResponse(url, params, DoubanSubjectFeedObj.class, false);
     return result;
   }

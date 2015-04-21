@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import com.dongxuexidu.douban4j.model.IDoubanObject;
+import com.dongxuexidu.douban4j.model.subject.DoubanSubjectObj;
 import com.google.api.client.util.Key;
 
 /**
