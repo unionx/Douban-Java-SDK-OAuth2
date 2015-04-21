@@ -2,6 +2,7 @@ package com.dongxuexidu.douban4j.service;
 
 import com.dongxuexidu.douban4j.constants.RequestUrls;
 import com.dongxuexidu.douban4j.model.app.DoubanException;
+import com.dongxuexidu.douban4j.model.subject.DoubanSubjectFeedObj;
 import com.dongxuexidu.douban4j.model.subject.DoubanSubjectObj;
 
 import java.io.IOException;
@@ -28,4 +29,17 @@ public class DoubanBookService extends DoubanService {
     String url = RequestUrls.DOUBAN_BOOK_SUBJECT_PREFIX + "/"+ bookId;
     return this.client.getResponseInJson(url, null, DoubanSubjectObj.class, false);
   }
+
+  public DoubanSubjectObj getBookInfoByISBN(String isbn)
+    throws DoubanException, IOException {
+    String url = RequestUrls.DOUBAN_BOOK_SUBJECT_PREFIX + "/isbn/" + isbn;
+    return this.client.getResponseInJson(url, null, DoubanSubjectObj.class, false);
+  }
+
+  public DoubanSubjectFeedObj searchBook(String q, String tag)
+    throws DoubanException, IOException {
+    String url = RequestUrls.DOUBAN_BOOK_SUBJECT_PREFIX + "/search";
+    return searchDoubanSubject(url, q, tag, null, null);
+  }
+
 }

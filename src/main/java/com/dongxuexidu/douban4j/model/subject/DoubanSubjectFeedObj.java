@@ -8,7 +8,7 @@ import java.util.List;
  *
  * @author Zhibo Wei <uglytroll@dongxuexidu.com>
  */
-public class DoubanSubjectFeedObj implements IDoubanObject{
+public class DoubanSubjectFeedObj implements IDoubanObject {
   
   @Key
   private String title;
@@ -29,6 +29,10 @@ public class DoubanSubjectFeedObj implements IDoubanObject{
   public String getObjName() {
     return "subjectfeed";
   }
+
+  @Key("books")
+  private List<DoubanSubjectObj> books;
+
 
   /**
    * @return the title
@@ -99,5 +103,12 @@ public class DoubanSubjectFeedObj implements IDoubanObject{
   public void setSubjects(List<DoubanSubjectObj> subjects) {
     this.subjects = subjects;
   }
-  
+
+  public List<DoubanSubjectObj> getBooks() {
+    return books;
+  }
+
+  public void setBooks(List<DoubanSubjectObj> books) {
+    this.books = books;
+  }
 }

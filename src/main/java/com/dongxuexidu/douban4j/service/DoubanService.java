@@ -1,8 +1,16 @@
 package com.dongxuexidu.douban4j.service;
 
+import com.dongxuexidu.douban4j.constants.DefaultConfigs;
 import com.dongxuexidu.douban4j.model.app.DoubanException;
+import com.dongxuexidu.douban4j.model.subject.DoubanSubjectFeedObj;
 import com.dongxuexidu.douban4j.utils.ErrorHandler;
 import com.dongxuexidu.douban4j.utils.HttpManager;
+import org.apache.http.NameValuePair;
+import org.apache.http.message.BasicNameValuePair;
+
+import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  *
@@ -25,6 +33,33 @@ public abstract class DoubanService {
       throw ErrorHandler.accessTokenNotSet();
     }
     this.client.setAccessToken(accessToken);
+  }
+
+  protected DoubanSubjectFeedObj searchDoubanSubject (String url, String q, String tag,
+                                              Integer startIndex, Integer maxResult)
+          throws DoubanException, IOException {
+
+    List<NameValuePair> params = new ArrayList<NameValuePair>();
+    if (q != null && q.length() > 0) {
+      params.add(new BasicNameValuePair("q", q));
+    }
+    if (tag != null && tag.length() > 0) {
+      params.add(new BasicNameValuePair("tag", tag));
+    }
+    if (params.isEmpty()) {
+      throw ErrorHandler.missingRequiredParam();
+    }
+    if (startIndex != null) {
+      params.add(new BasicNameValuePair("start-index", startIndex.toString()));
+    }
+    if (maxResult != null) {
+      params.add(new BasicNameValuePair("max-results", maxResult.toString()));
+    }
+    if (DefaultConfigs.TEST_API_KEY != null){
+      params.add(new BasicNameValuePair("apikey", DefaultConfigs.TEST_API_KEY));
+    }
+
+    return this.client.getResponseInJson(url, params, DoubanSubjectFeedObj.class, false);
   }
   
 }
