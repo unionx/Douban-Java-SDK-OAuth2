@@ -4,34 +4,19 @@ import com.dongxuexidu.douban4j.constants.DefaultConfigs;
 import com.dongxuexidu.douban4j.model.IDoubanObject;
 import com.dongxuexidu.douban4j.model.app.DoubanException;
 import com.dongxuexidu.douban4j.model.user.DoubanUserObj;
-import com.google.api.client.http.GenericUrl;
-import com.google.api.client.http.HttpHeaders;
-import com.google.api.client.http.HttpRequest;
-import com.google.api.client.http.HttpRequestFactory;
-import com.google.api.client.http.HttpRequestInitializer;
-import com.google.api.client.http.HttpResponse;
-import com.google.api.client.http.HttpResponseException;
-import com.google.api.client.http.MultipartRelatedContent;
-import com.google.api.client.http.UrlEncodedContent;
+import com.google.api.client.http.*;
+// import com.google.api.client.http.MultipartRelatedContent;
 import com.google.api.client.http.apache.ApacheHttpTransport;
-import com.google.api.client.http.json.JsonHttpContent;
 import com.google.api.client.http.xml.atom.AtomContent;
 import com.google.api.client.json.JsonObjectParser;
 import com.google.api.client.json.jackson.JacksonFactory;
 import com.google.api.client.xml.XmlObjectParser;
-import java.io.BufferedReader;
 import java.io.IOException;
-import java.io.InputStreamReader;
-import java.io.UnsupportedEncodingException;
 
 import java.net.URLEncoder;
 import java.util.List;
 import java.util.Map;
 import org.apache.http.NameValuePair;
-import org.apache.http.client.HttpClient;
-import org.apache.http.client.entity.UrlEncodedFormEntity;
-import org.apache.http.client.methods.HttpPost;
-import org.apache.http.entity.StringEntity;
 
 
 /**
@@ -71,20 +56,28 @@ public class HttpManager {
     return !(this.accessToken == null || this.accessToken.isEmpty());
   }
 
-  public <T extends IDoubanObject> T getResponse(String url, List<NameValuePair> params, Class<T> responseType, boolean needAccessToken) throws DoubanException, IOException {
+  public <T extends IDoubanObject> T getResponse(String url, List<NameValuePair> params,
+                                                 Class<T> responseType, boolean needAccessToken)
+          throws DoubanException, IOException {
+
     if (params != null && params.size() > 0) {
       String encodedParams = encodeParameters(params);
       url = url + "?" + encodedParams;
     }
+
     HttpRequest method = requestFactory.buildGetRequest(new GenericUrl(url));
     return httpRequest(method, needAccessToken).parseAs(responseType);
   }
   
-  public <T extends IDoubanObject> T getResponseInJson(String url, List<NameValuePair> params, Class<T> responseType, boolean needAccessToken) throws DoubanException, IOException {
+  public <T extends IDoubanObject> T getResponseInJson(String url, List<NameValuePair> params,
+                                                       Class<T> responseType, boolean needAccessToken)
+          throws DoubanException, IOException {
+
     if (params != null && params.size() > 0) {
       String encodedParams = encodeParameters(params);
       url = url + "?" + encodedParams;
     }
+
     HttpRequest method = requestFactory.buildGetRequest(new GenericUrl(url));
     method.setParser(new JsonObjectParser(new JacksonFactory()));
     return httpRequest(method, needAccessToken).parseAs(responseType);
@@ -106,10 +99,13 @@ public class HttpManager {
     return httpRequest(method, needAccessToken).parseAsString();
   }
   
-  public String postMultipartEntry (String url, Map<String, String> params, boolean needAccessToken) throws DoubanException, IOException {
+  public String postMultipartEntry (String url, Map<String, String> params, boolean needAccessToken)
+          throws DoubanException, IOException {
+
     UrlEncodedContent uec = new UrlEncodedContent(params);
-    MultipartRelatedContent content = new MultipartRelatedContent(uec);
-    HttpRequest method = requestFactory.buildPostRequest(new GenericUrl(url), content);
+    MultipartContent.Part content = new MultipartContent.Part(uec);
+
+    HttpRequest method = requestFactory.buildPostRequest(new GenericUrl(url), content.getContent());
     return httpRequest(method, needAccessToken).parseAsString();
   }
 
