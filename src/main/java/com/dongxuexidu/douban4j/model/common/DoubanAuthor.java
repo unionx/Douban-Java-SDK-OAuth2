@@ -13,7 +13,7 @@ import java.util.List;
  *
  * @author Zhibo Wei <uglytroll@dongxuexidu.com>
  */
-public class DoubanAuthorObj implements IDoubanObject {
+public class DoubanAuthor implements IDoubanObject {
 
   @Override
   public String getObjName() {

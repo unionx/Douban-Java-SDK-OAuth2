@@ -1,7 +1,7 @@
 package com.dongxuexidu.douban4j.model.v2;
 
 import com.dongxuexidu.douban4j.model.IDoubanObject;
-import com.dongxuexidu.douban4j.model.common.DoubanImageObj;
+import com.dongxuexidu.douban4j.model.common.DoubanImage;
 import com.google.api.client.util.Key;
 
 /**
@@ -12,7 +12,7 @@ import com.google.api.client.util.Key;
 public class DoubanDirectorObj implements IDoubanObject {
   
   @Key
-  private DoubanImageObj avatars;
+  private DoubanImage avatars;
   
   @Key
   private String alt;
@@ -28,7 +28,7 @@ public class DoubanDirectorObj implements IDoubanObject {
     return "DoubanDirectorObj";
   }
 
-  public DoubanImageObj getAvatars() {
+  public DoubanImage getAvatars() {
     return avatars;
   }
 

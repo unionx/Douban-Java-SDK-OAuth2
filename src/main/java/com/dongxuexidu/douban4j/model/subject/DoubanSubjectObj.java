@@ -36,7 +36,7 @@ public class DoubanSubjectObj implements IDoubanObject {
   private String subtype;
   
   @Key
-  private DoubanImageObj images;
+  private DoubanImage images;
   
   @Key
   private String alt;
@@ -48,7 +48,7 @@ public class DoubanSubjectObj implements IDoubanObject {
   private String summary;
 
   @Key
-  private List<DoubanTagObj> tags = new ArrayList<DoubanTagObj>();
+  private List<DoubanTag> tags = new ArrayList<DoubanTag>();
   
   @Key
   private List<DoubanCastObject> casts = new ArrayList<DoubanCastObject>();
@@ -66,7 +66,7 @@ public class DoubanSubjectObj implements IDoubanObject {
   private List<String> countries = new ArrayList<>();
 
   @Key("db:author")
-  private List<DoubanAuthorObj> authors = new ArrayList<>();
+  private List<DoubanAuthor> authors = new ArrayList<>();
 
   @Key("db:attribute")
   private List<DoubanAttributeObj> attributes = new ArrayList<>();
@@ -110,15 +110,15 @@ public class DoubanSubjectObj implements IDoubanObject {
     return subtype;
   }
 
-  public DoubanImageObj getImages() {
+  public DoubanImage getImages() {
     return images;
   }
 
-  public List<DoubanTagObj> getTags() {
+  public List<DoubanTag> getTags() {
     return tags;
   }
 
-  public void setTags(List<DoubanTagObj> tags) {
+  public void setTags(List<DoubanTag> tags) {
     this.tags = tags;
   }
 
@@ -129,18 +129,18 @@ public class DoubanSubjectObj implements IDoubanObject {
   /**
    * @return the authors
    */
-  public List<DoubanAuthorObj> getAuthors() {
+  public List<DoubanAuthor> getAuthors() {
     return authors;
   }
 
   /**
    * @param authors the authors to set
    */
-  public void setAuthors(List<DoubanAuthorObj> authors) {
+  public void setAuthors(List<DoubanAuthor> authors) {
     this.authors = authors;
   }
 
-  public void addAuthor(DoubanAuthorObj author) {
+  public void addAuthor(DoubanAuthor author) {
     this.authors.add(author);
   }
 

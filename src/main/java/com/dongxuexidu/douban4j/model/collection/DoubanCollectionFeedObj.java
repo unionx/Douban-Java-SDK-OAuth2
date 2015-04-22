@@ -1,8 +1,7 @@
 package com.dongxuexidu.douban4j.model.collection;
 
 import com.dongxuexidu.douban4j.model.IDoubanObject;
-import com.dongxuexidu.douban4j.model.common.DoubanAuthorObj;
-import com.dongxuexidu.douban4j.model.user.DoubanUserObj;
+import com.dongxuexidu.douban4j.model.common.DoubanAuthor;
 import com.google.api.client.util.Key;
 import java.util.ArrayList;
 import java.util.List;
@@ -17,7 +16,7 @@ public class DoubanCollectionFeedObj implements IDoubanObject{
   private List<DoubanCollectionObj> collections = new ArrayList<DoubanCollectionObj>();
   
   @Key("author")
-  private DoubanAuthorObj author;
+  private DoubanAuthor author;
   
   @Key
   private String title;
@@ -53,14 +52,14 @@ public class DoubanCollectionFeedObj implements IDoubanObject{
   /**
    * @return the author
    */
-  public DoubanAuthorObj getAuthor() {
+  public DoubanAuthor getAuthor() {
     return author;
   }
 
   /**
    * @param author the author to set
    */
-  public void setAuthor(DoubanAuthorObj author) {
+  public void setAuthor(DoubanAuthor author) {
     this.author = author;
   }
 

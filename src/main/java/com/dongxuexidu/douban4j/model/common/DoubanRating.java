@@ -10,24 +10,24 @@ import com.google.api.client.util.Key;
  *
  * @author Zhibo Wei <uglytroll@dongxuexidu.com>
  */
-public class DoubanRatingObj implements IDoubanObject{
+public class DoubanRating implements IDoubanObject{
 
   @Override
   public String getObjName() {
     return "rating";
   }
   
-  @Key("@min")
-  private int min = 1;
+  // @Key("@min")
+  private int min;
   
-  @Key("@max")
-  private int max = 5;
+  // @Key("@max")
+  private int max;
   
-  @Key("@value")
-  private int value = 0;
+  // @Key("@value")
+  private int value;
   
-  @Key("@average")
-  private float average = 0.0f;
+  // @Key("@average")
+  private float average;
   
   @Key("@numRaters")
   private int numberOfRaters = 0;

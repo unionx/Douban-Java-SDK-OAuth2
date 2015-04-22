@@ -3,16 +3,13 @@ package com.dongxuexidu.douban4j.model.collection;
 import com.dongxuexidu.douban4j.model.IDoubanObject;
 import com.dongxuexidu.douban4j.model.common.DoubanAttributeObj;
 import com.dongxuexidu.douban4j.model.common.DoubanLinkObj;
-import com.dongxuexidu.douban4j.model.common.DoubanRatingObj;
-import com.dongxuexidu.douban4j.model.common.DoubanTagObj;
+import com.dongxuexidu.douban4j.model.common.DoubanRating;
+import com.dongxuexidu.douban4j.model.common.DoubanTag;
 import com.dongxuexidu.douban4j.model.subject.DoubanSubjectObj;
 import com.dongxuexidu.douban4j.model.user.DoubanUserObj;
 import com.google.api.client.util.Key;
 import java.util.ArrayList;
-import java.util.Date;
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 
 /**
  *
@@ -29,7 +26,7 @@ public class DoubanCollectionObj implements IDoubanObject{
   private String updateTime = null;
   
   @Key("db:tag")
-  private List<DoubanTagObj> tags = new ArrayList<DoubanTagObj>();
+  private List<DoubanTag> tags = new ArrayList<DoubanTag>();
   
   @Key("author")
   private DoubanUserObj author = null;
@@ -50,7 +47,7 @@ public class DoubanCollectionObj implements IDoubanObject{
   private String status;
   
   @Key("gd:rating")
-  private DoubanRatingObj rating = null;
+  private DoubanRating rating = null;
   
   @Key("content")
   private String content;
@@ -75,18 +72,18 @@ public class DoubanCollectionObj implements IDoubanObject{
   /**
    * @return the tags
    */
-  public List<DoubanTagObj> getTags() {
+  public List<DoubanTag> getTags() {
     return tags;
   }
 
   /**
    * @param tags the tags to set
    */
-  public void setTags(List<DoubanTagObj> tags) {
+  public void setTags(List<DoubanTag> tags) {
     this.tags = tags;
   }
   
-  public void addTag (DoubanTagObj tag) {
+  public void addTag (DoubanTag tag) {
     this.tags.add(tag);
   }
 
@@ -184,14 +181,14 @@ public class DoubanCollectionObj implements IDoubanObject{
   /**
    * @return the rating
    */
-  public DoubanRatingObj getRating() {
+  public DoubanRating getRating() {
     return rating;
   }
 
   /**
    * @param rating the rating to set
    */
-  public void setRating(DoubanRatingObj rating) {
+  public void setRating(DoubanRating rating) {
     this.rating = rating;
   }
 

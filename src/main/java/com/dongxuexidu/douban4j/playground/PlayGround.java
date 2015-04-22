@@ -5,7 +5,7 @@ import com.dongxuexidu.douban4j.model.app.AccessToken;
 import com.dongxuexidu.douban4j.model.app.DoubanException;
 import com.dongxuexidu.douban4j.model.app.RequestGrantScope;
 import com.dongxuexidu.douban4j.model.common.DoubanAttributeObj;
-import com.dongxuexidu.douban4j.model.common.DoubanTagObj;
+import com.dongxuexidu.douban4j.model.common.DoubanTag;
 import com.dongxuexidu.douban4j.model.shuo.DoubanShuoAttachementObj;
 import com.dongxuexidu.douban4j.model.shuo.DoubanShuoMediaObj;
 import com.dongxuexidu.douban4j.model.shuo.DoubanShuoStatusObj;
@@ -16,7 +16,6 @@ import com.dongxuexidu.douban4j.service.DoubanBookMovieMusicService;
 import com.dongxuexidu.douban4j.service.DoubanMailService;
 import com.dongxuexidu.douban4j.service.DoubanShuoService;
 import com.google.api.client.http.json.JsonHttpContent;
-import com.google.api.client.json.JsonObjectParser;
 import com.google.api.client.json.jackson.JacksonFactory;
 import com.google.api.client.xml.XmlNamespaceDictionary;
 import com.google.api.client.xml.XmlObjectParser;
@@ -26,7 +25,6 @@ import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.io.InputStreamReader;
-import java.io.OutputStream;
 import java.nio.charset.Charset;
 import java.util.ArrayList;
 import java.util.List;
@@ -121,7 +119,7 @@ public class PlayGround {
       DoubanBookMovieMusicService service = new DoubanBookMovieMusicService();
       DoubanSubjectObj book = service.getMusicInfoById(2272292);
       System.out.println("title : " + book.getTitle());
-      for (DoubanTagObj tag : book.getTags()) {
+      for (DoubanTag tag : book.getTags()) {
         System.out.println("tag, count : " + tag.getCount() + " , name : " + tag.getName());
       }
       System.out.println("rating, min : " + book.getRating().getMin() + ", max : " + book.getRating().getMax() + " , value : " + book.getRating().getValue() + " , count : " + book.getRating().getNumberOfRaters() + " , avg : " + book.getRating().getAverage());

@@ -2,13 +2,12 @@ package com.dongxuexidu.douban4j.service;
 
 import com.dongxuexidu.douban4j.constants.StatusCode;
 import com.dongxuexidu.douban4j.constants.RequestUrls;
-import com.dongxuexidu.douban4j.model.UnTested;
 import com.dongxuexidu.douban4j.model.app.DoubanException;
 import com.dongxuexidu.douban4j.model.collection.DoubanCollectionFeedObj;
 import com.dongxuexidu.douban4j.model.collection.DoubanCollectionObj;
 import com.dongxuexidu.douban4j.model.common.DoubanAttributeObj;
-import com.dongxuexidu.douban4j.model.common.DoubanRatingObj;
-import com.dongxuexidu.douban4j.model.common.DoubanTagObj;
+import com.dongxuexidu.douban4j.model.common.DoubanRating;
+import com.dongxuexidu.douban4j.model.common.DoubanTag;
 import com.dongxuexidu.douban4j.model.subject.DoubanSubjectObj;
 import com.dongxuexidu.douban4j.utils.Converters;
 import com.dongxuexidu.douban4j.utils.ErrorHandler;
@@ -229,7 +228,7 @@ public class DoubanCollectionService extends DoubanService {
     if (id != null) {
       col.setId(RequestUrls.DOUBAN_COLLECTION_PREFIX + "/" + id);
     }
-    DoubanRatingObj rat = new DoubanRatingObj();
+    DoubanRating rat = new DoubanRating();
     if (rating > 5) {
       rating = 5;
     } else if (rating < 1) {
@@ -238,9 +237,9 @@ public class DoubanCollectionService extends DoubanService {
     rat.setValue(rating);
     col.setRating(rat);
     if (tags != null && !tags.isEmpty()) {
-      List<DoubanTagObj> tagsList = new ArrayList<DoubanTagObj>();
+      List<DoubanTag> tagsList = new ArrayList<DoubanTag>();
       for (String t : tags) {
-        DoubanTagObj tag = new DoubanTagObj();
+        DoubanTag tag = new DoubanTag();
         tag.setName(t);
         tagsList.add(tag);
       }

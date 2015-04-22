@@ -2,7 +2,7 @@ package com.dongxuexidu.douban4j.model.event;
 
 import com.dongxuexidu.douban4j.model.IDoubanObject;
 import com.dongxuexidu.douban4j.model.common.DoubanAttributeObj;
-import com.dongxuexidu.douban4j.model.common.DoubanAuthorObj;
+import com.dongxuexidu.douban4j.model.common.DoubanAuthor;
 import com.dongxuexidu.douban4j.model.common.DoubanCategoryObj;
 import com.dongxuexidu.douban4j.model.common.DoubanLinkObj;
 import com.dongxuexidu.douban4j.model.common.DoubanLocationObj;
@@ -32,7 +32,7 @@ public class DoubanEventEntryObj implements IDoubanObject{
   private DoubanCategoryObj category;
   
   @Key("author")
-  private DoubanAuthorObj author;
+  private DoubanAuthor author;
   
   @Key("link")
   private List<DoubanLinkObj> links;
@@ -100,14 +100,14 @@ public class DoubanEventEntryObj implements IDoubanObject{
   /**
    * @return the author
    */
-  public DoubanAuthorObj getAuthor() {
+  public DoubanAuthor getAuthor() {
     return author;
   }
 
   /**
    * @param author the author to set
    */
-  public void setAuthor(DoubanAuthorObj author) {
+  public void setAuthor(DoubanAuthor author) {
     this.author = author;
   }
 

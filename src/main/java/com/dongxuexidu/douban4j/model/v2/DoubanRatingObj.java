@@ -30,7 +30,7 @@ public class DoubanRatingObj implements IDoubanObject {
 
   @Override
   public String getObjName() {
-    return "DoubanRatingObj";
+    return "DoubanRating";
   }
 
   public int getMax() {
@@ -72,6 +72,6 @@ public class DoubanRatingObj implements IDoubanObject {
 
   @Override
   public String toString() {
-    return "DoubanRatingObj [max=" + max + ", average=" + average + ", stars=" + stars + ", min=" + min + "]";
+    return "DoubanRating [max=" + max + ", average=" + average + ", stars=" + stars + ", min=" + min + "]";
   }
 }

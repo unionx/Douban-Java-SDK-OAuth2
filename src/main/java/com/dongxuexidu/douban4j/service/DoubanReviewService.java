@@ -2,10 +2,8 @@ package com.dongxuexidu.douban4j.service;
 
 import com.dongxuexidu.douban4j.constants.RequestUrls;
 import com.dongxuexidu.douban4j.constants.StatusCode;
-import com.dongxuexidu.douban4j.model.UnTested;
 import com.dongxuexidu.douban4j.model.app.DoubanException;
-import com.dongxuexidu.douban4j.model.collection.DoubanCollectionFeedObj;
-import com.dongxuexidu.douban4j.model.common.DoubanRatingObj;
+import com.dongxuexidu.douban4j.model.common.DoubanRating;
 import com.dongxuexidu.douban4j.model.review.DoubanReviewEntryObj;
 import com.dongxuexidu.douban4j.model.review.DoubanReviewFeedObj;
 import com.dongxuexidu.douban4j.model.subject.DoubanSubjectObj;
@@ -13,7 +11,6 @@ import com.dongxuexidu.douban4j.utils.ErrorHandler;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.logging.Level;
 import java.util.logging.Logger;
 import org.apache.http.NameValuePair;
 import org.apache.http.message.BasicNameValuePair;
@@ -219,7 +216,7 @@ public class DoubanReviewService extends DoubanService {
     } else {
       obj.setTitle("");
     }
-    DoubanRatingObj rat = new DoubanRatingObj();
+    DoubanRating rat = new DoubanRating();
     if (rating > 5) {
       rating = 5;
     } else if (rating < 1) {

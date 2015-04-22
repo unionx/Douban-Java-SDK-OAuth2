@@ -1,7 +1,7 @@
 package com.dongxuexidu.douban4j.model.review;
 
 import com.dongxuexidu.douban4j.model.IDoubanObject;
-import com.dongxuexidu.douban4j.model.common.DoubanAuthorObj;
+import com.dongxuexidu.douban4j.model.common.DoubanAuthor;
 import com.dongxuexidu.douban4j.model.common.DoubanLinkObj;
 import com.google.api.client.util.Key;
 import java.util.List;
@@ -21,7 +21,7 @@ public class DoubanReviewFeedObj implements IDoubanObject{
   private String title;
   
   @Key("author")
-  private DoubanAuthorObj author;
+  private DoubanAuthor author;
   
   @Key("link")
   private List<DoubanLinkObj> links;
@@ -55,14 +55,14 @@ public class DoubanReviewFeedObj implements IDoubanObject{
   /**
    * @return the author
    */
-  public DoubanAuthorObj getAuthor() {
+  public DoubanAuthor getAuthor() {
     return author;
   }
 
   /**
    * @param author the author to set
    */
-  public void setAuthor(DoubanAuthorObj author) {
+  public void setAuthor(DoubanAuthor author) {
     this.author = author;
   }
 

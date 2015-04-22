@@ -8,20 +8,17 @@ import com.google.api.client.util.Key;
  * @author Sean Guo <seanguo85@qq.com>
  *
  */
-public class DoubanImageObj implements IDoubanObject {
+public class DoubanImage implements IDoubanObject {
 
 	@Override
 	public String getObjName() {
 		return "image";
 	}
 
-	@Key("small")
 	private String small;
 
-	@Key("medium")
-	private String media;
+	private String medium;
 
-	@Key("large")
 	private String large;
 
 	public String getSmall() {
@@ -32,12 +29,12 @@ public class DoubanImageObj implements IDoubanObject {
 		this.small = small;
 	}
 
-	public String getMedia() {
-		return media;
+	public String getMedium() {
+		return medium;
 	}
 
-	public void setMedia(String media) {
-		this.media = media;
+	public void setMedium(String medium) {
+		this.medium = medium;
 	}
 
 	public String getLarge() {
@@ -50,7 +47,7 @@ public class DoubanImageObj implements IDoubanObject {
 
 	@Override
 	public String toString() {
-		return "DoubanImageObj [small=" + small + ", media=" + media
+		return "DoubanImage [small=" + small + ", medium=" + medium
 				+ ", large=" + large + "]";
 	}
 }

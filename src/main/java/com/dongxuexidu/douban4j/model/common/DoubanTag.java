@@ -11,7 +11,7 @@ import com.google.api.client.util.Key;
  *
  * @author Zhibo Wei <uglytroll@dongxuexidu.com>
  */
-public class DoubanTagObj implements IDoubanObject{
+public class DoubanTag implements IDoubanObject{
 
   @Override
   public String getObjName() {
