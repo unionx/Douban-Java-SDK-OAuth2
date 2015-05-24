@@ -1,5 +1,6 @@
 package com.dongxuexidu.douban4j.model.common;
 
+import com.dongxuexidu.douban4j.model.IDoubanObject;
 import com.google.api.client.util.Key;
 
 import java.util.ArrayList;
@@ -8,7 +9,7 @@ import java.util.List;
 /**
  * Created by unionx on 15/4/22.
  */
-public class DoubanBook extends DoubanSubject {
+public class DoubanBook extends DoubanSubject implements IDoubanObject {
 
   @Key
   private String isbn10;
@@ -85,6 +86,11 @@ public class DoubanBook extends DoubanSubject {
 
   @Key("ebook_price")
   private String ebookPrice;
+
+  @Override
+  public String getObjName() {
+    return "book";
+  }
 
   public String getIsbn10() {
     return isbn10;

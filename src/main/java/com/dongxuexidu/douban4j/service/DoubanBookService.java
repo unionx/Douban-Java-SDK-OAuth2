@@ -2,6 +2,8 @@ package com.dongxuexidu.douban4j.service;
 
 import com.dongxuexidu.douban4j.constants.RequestUrls;
 import com.dongxuexidu.douban4j.model.app.DoubanException;
+import com.dongxuexidu.douban4j.model.common.DoubanBook;
+import com.dongxuexidu.douban4j.model.common.DoubanSubject;
 import com.dongxuexidu.douban4j.model.subject.DoubanSubjectFeedObj;
 import com.dongxuexidu.douban4j.model.subject.DoubanSubjectObj;
 

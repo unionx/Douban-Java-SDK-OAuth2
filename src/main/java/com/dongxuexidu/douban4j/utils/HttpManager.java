@@ -3,6 +3,7 @@ package com.dongxuexidu.douban4j.utils;
 import com.dongxuexidu.douban4j.constants.DefaultConfigs;
 import com.dongxuexidu.douban4j.model.IDoubanObject;
 import com.dongxuexidu.douban4j.model.app.DoubanException;
+import com.dongxuexidu.douban4j.model.common.DoubanSubject;
 import com.dongxuexidu.douban4j.model.user.DoubanUserObj;
 import com.google.api.client.http.*;
 // import com.google.api.client.http.MultipartRelatedContent;
@@ -68,8 +69,8 @@ public class HttpManager {
     HttpRequest method = requestFactory.buildGetRequest(new GenericUrl(url));
     return httpRequest(method, needAccessToken).parseAs(responseType);
   }
-  
-  public <T extends IDoubanObject> T getResponseInJson(String url, List<NameValuePair> params,
+
+  public <T> T getResponseInJson(String url, List<NameValuePair> params,
                                                        Class<T> responseType, boolean needAccessToken)
           throws DoubanException, IOException {
 

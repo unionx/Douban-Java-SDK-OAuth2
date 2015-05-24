@@ -15,7 +15,8 @@ public class DefaultConfigs {
   public static final String AUTH_URL = "https://www.douban.com/service/auth2/auth";
   public static final String ACCESS_TOKEN_URL = "https://www.douban.com/service/auth2/token";
   public static final String ACCESS_TOKEN_REDIRECT_URL = "http://www.dongxuexidu.com";
-  public static final String TEST_API_KEY = null;
+  public static final String TEST_API_KEY = "0ba4e3363b4682bb22eea9a2b1d38831";
+
 
   public static final XmlNamespaceDictionary DOUBAN_XML_NAMESPACE = new XmlNamespaceDictionary()
           .set("", "http://www.w3.org/2005/Atom")
