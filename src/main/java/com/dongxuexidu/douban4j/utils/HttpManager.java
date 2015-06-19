@@ -17,6 +17,9 @@ import java.io.IOException;
 import java.net.URLEncoder;
 import java.util.List;
 import java.util.Map;
+
+import org.apache.commons.logging.Log;
+import org.apache.commons.logging.LogFactory;
 import org.apache.http.NameValuePair;
 
 
@@ -28,6 +31,7 @@ public class HttpManager {
 
   private static final ApacheHttpTransport APACHE_HTTP_TRANSPORT = new ApacheHttpTransport();
   private static final String CHARSET = "UTF-8";
+  private static final Log log = LogFactory.getLog(HttpManager.class);
   private String accessToken = null;
   HttpRequestFactory requestFactory = null;
 
@@ -60,6 +64,9 @@ public class HttpManager {
   public <T extends IDoubanObject> T getResponse(String url, List<NameValuePair> params,
                                                  Class<T> responseType, boolean needAccessToken)
           throws DoubanException, IOException {
+
+    log.info("Sending request......");
+    log.info(url);
 
     if (params != null && params.size() > 0) {
       String encodedParams = encodeParameters(params);

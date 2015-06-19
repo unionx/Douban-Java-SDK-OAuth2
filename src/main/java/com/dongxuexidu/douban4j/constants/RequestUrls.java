@@ -28,11 +28,18 @@ public class RequestUrls {
 
   public static final String DOUBAN_MOVIE_SUBJECT_PREFIX = DefaultConfigs.API_URL_PREFIX + "/movie/subject";
 
+  @Deprecated
   public static final String DOUBAN_MUSIC_SUBJECT_PREFIX = DefaultConfigs.API_URL_PREFIX + "/music/subject";
 
   public static final String DOUBAN_MOVIE_V2_SUBJECT_PREFIX = DefaultConfigs.API_URL_PREFIX + "/v2/movie/subject";
   
   public static final String DOUBAN_MOVIE_V2_PREFIX = DefaultConfigs.API_URL_PREFIX + "/v2/movie";
+
+  /**
+   * Music services
+   */
+  public static final String DOUBAN_MUSIC_BASIC_URL = DefaultConfigs.API_URL_PREFIX + "/music";
+  public static final String DOUBAN_MUSIC_SEARCH_URL = DOUBAN_MUSIC_BASIC_URL + "/search";
   
   /**
    * Note services
