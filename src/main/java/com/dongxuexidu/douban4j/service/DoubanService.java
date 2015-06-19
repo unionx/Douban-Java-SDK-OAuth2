@@ -5,6 +5,8 @@ import com.dongxuexidu.douban4j.model.app.DoubanException;
 import com.dongxuexidu.douban4j.model.subject.DoubanSubjectFeedObj;
 import com.dongxuexidu.douban4j.utils.ErrorHandler;
 import com.dongxuexidu.douban4j.utils.HttpManager;
+import org.apache.commons.logging.Log;
+import org.apache.commons.logging.LogFactory;
 import org.apache.http.NameValuePair;
 import org.apache.http.message.BasicNameValuePair;
 
@@ -19,6 +21,7 @@ import java.util.List;
 public abstract class DoubanService {
   
   protected HttpManager client = null;
+  private static final Log log = LogFactory.getLog(DoubanService.class);
   
   protected DoubanService () {
     this.client = new HttpManager();
@@ -54,9 +57,6 @@ public abstract class DoubanService {
     }
     if (maxResult != null) {
       params.add(new BasicNameValuePair("max-results", maxResult.toString()));
-    }
-    if (DefaultConfigs.TEST_API_KEY != null){
-      params.add(new BasicNameValuePair("apikey", DefaultConfigs.TEST_API_KEY));
     }
 
     return this.client.getResponseInJson(url, params, DoubanSubjectFeedObj.class, false);

@@ -6,17 +6,20 @@ import com.dongxuexidu.douban4j.model.common.DoubanBook;
 import com.dongxuexidu.douban4j.model.common.DoubanSubject;
 import com.dongxuexidu.douban4j.model.subject.DoubanSubjectFeedObj;
 import com.dongxuexidu.douban4j.model.subject.DoubanSubjectObj;
+import org.apache.commons.logging.Log;
+import org.apache.commons.logging.LogFactory;
 
 import java.io.IOException;
-import java.util.logging.Logger;
+
 
 /**
  * Created by unionx on 15/4/22.
+ * Service for douban book
  */
 
 public class DoubanBookService extends DoubanService {
 
-  final static Logger logger = Logger.getLogger(DoubanBookService.class.getName());
+  private static final Log log = LogFactory.getLog(DoubanBookService.class);
 
   public DoubanBookService() {
     super();

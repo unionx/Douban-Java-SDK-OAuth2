@@ -1,6 +1,5 @@
 package com.dongxuexidu.douban4j.constants;
 
-import com.dongxuexidu.douban4j.model.app.RequestGrantScope;
 import com.google.api.client.xml.XmlNamespaceDictionary;
 
 /**
@@ -15,7 +14,7 @@ public class DefaultConfigs {
   public static final String AUTH_URL = "https://www.douban.com/service/auth2/auth";
   public static final String ACCESS_TOKEN_URL = "https://www.douban.com/service/auth2/token";
   public static final String ACCESS_TOKEN_REDIRECT_URL = "http://www.dongxuexidu.com";
-  public static final String TEST_API_KEY = "0ba4e3363b4682bb22eea9a2b1d38831";
+  public static String TEST_API_KEY = null;
 
 
   public static final XmlNamespaceDictionary DOUBAN_XML_NAMESPACE = new XmlNamespaceDictionary()
@@ -23,5 +22,9 @@ public class DefaultConfigs {
           .set("db", "http://www.douban.com/xmlns/")
           .set("gd", "http://schemas.google.com/g/2005")
           .set("opensearch", "http://a9.com/-/spec/opensearchrss/1.0/");
+
+  public static void setTestApiKey(String apiKey) {
+    TEST_API_KEY = apiKey;
+  }
   
 }

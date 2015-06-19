@@ -3,10 +3,8 @@ package com.dongxuexidu.douban4j.utils;
 import com.dongxuexidu.douban4j.constants.DefaultConfigs;
 import com.dongxuexidu.douban4j.model.IDoubanObject;
 import com.dongxuexidu.douban4j.model.app.DoubanException;
-import com.dongxuexidu.douban4j.model.common.DoubanSubject;
 import com.dongxuexidu.douban4j.model.user.DoubanUserObj;
 import com.google.api.client.http.*;
-// import com.google.api.client.http.MultipartRelatedContent;
 import com.google.api.client.http.apache.ApacheHttpTransport;
 import com.google.api.client.http.xml.atom.AtomContent;
 import com.google.api.client.json.JsonObjectParser;
@@ -15,12 +13,14 @@ import com.google.api.client.xml.XmlObjectParser;
 import java.io.IOException;
 
 import java.net.URLEncoder;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import org.apache.http.NameValuePair;
+import org.apache.http.message.BasicNameValuePair;
 
 
 /**
@@ -65,26 +65,34 @@ public class HttpManager {
                                                  Class<T> responseType, boolean needAccessToken)
           throws DoubanException, IOException {
 
-    log.info("Sending request......");
-    log.info(url);
-
     if (params != null && params.size() > 0) {
       String encodedParams = encodeParameters(params);
       url = url + "?" + encodedParams;
     }
+
+    log.info("Sending request to: " + url);
 
     HttpRequest method = requestFactory.buildGetRequest(new GenericUrl(url));
     return httpRequest(method, needAccessToken).parseAs(responseType);
   }
 
   public <T> T getResponseInJson(String url, List<NameValuePair> params,
-                                                       Class<T> responseType, boolean needAccessToken)
+                                 Class<T> responseType, boolean needAccessToken)
           throws DoubanException, IOException {
+
+    if (DefaultConfigs.TEST_API_KEY != null) {
+      if (params == null) {
+        params = new ArrayList<>();
+      }
+      params.add(new BasicNameValuePair("apikey", DefaultConfigs.TEST_API_KEY));
+    }
 
     if (params != null && params.size() > 0) {
       String encodedParams = encodeParameters(params);
       url = url + "?" + encodedParams;
     }
+
+    log.info("Sending request to: " + url);
 
     HttpRequest method = requestFactory.buildGetRequest(new GenericUrl(url));
     method.setParser(new JsonObjectParser(new JacksonFactory()));
