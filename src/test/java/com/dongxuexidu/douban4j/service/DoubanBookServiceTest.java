@@ -2,7 +2,9 @@ package com.dongxuexidu.douban4j.service;
 
 import com.dongxuexidu.douban4j.constants.DefaultConfigs;
 import com.dongxuexidu.douban4j.model.book.DoubanBook;
+import com.dongxuexidu.douban4j.model.book.DoubanBookConstant;
 import com.dongxuexidu.douban4j.model.book.DoubanBookFeed;
+import com.dongxuexidu.douban4j.model.collection.DoubanCollectionFeed;
 import com.dongxuexidu.douban4j.model.tag.DoubanTag;
 import com.dongxuexidu.douban4j.model.tag.DoubanTagFeed;
 import junit.framework.TestCase;
@@ -19,11 +21,13 @@ public class DoubanBookServiceTest extends TestCase {
 
     private final static Log log = LogFactory.getLog(DoubanBookServiceTest.class);
     DoubanBookService doubanBookService;
+    String username;
 
     protected void setUp() {
         log.info("Testing DoubanBookService......");
         DefaultConfigs.TEST_API_KEY = "0ba4e3363b4682bb22eea9a2b1d38831";
         doubanBookService = new DoubanBookService();
+        username = "unionz";
     }
 
     public void testGetBookInfoById() throws Exception {
@@ -56,10 +60,18 @@ public class DoubanBookServiceTest extends TestCase {
 
     public void testGetUserBookTags() throws Exception {
         log.info("Testing getUserBookTags");
-        String username = "unionz";
         DoubanTagFeed doubanTagFeed = doubanBookService.getUserBookTags(username, null, 50);
         doubanTagFeed.printAllTags();
         assertTrue(doubanTagFeed.getTags().size() == 50);
+    }
+
+    public void testGetUserBookCollection() throws Exception {
+        log.info("Testing getUserBookCollection");
+        DoubanCollectionFeed collectionFeed = doubanBookService.getUserBookCollection(
+                username, null, null, DoubanBookConstant.READ, null, null, null, null
+        );
+        collectionFeed.printCollections();
+        assertTrue(collectionFeed.getCollections().size() > 0);
     }
 
 }

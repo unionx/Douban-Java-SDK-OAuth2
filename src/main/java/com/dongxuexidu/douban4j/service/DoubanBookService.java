@@ -4,11 +4,15 @@ import com.dongxuexidu.douban4j.constants.RequestUrls;
 import com.dongxuexidu.douban4j.model.app.DoubanException;
 import com.dongxuexidu.douban4j.model.book.DoubanBook;
 import com.dongxuexidu.douban4j.model.book.DoubanBookFeed;
+import com.dongxuexidu.douban4j.model.collection.DoubanCollection;
+import com.dongxuexidu.douban4j.model.collection.DoubanCollectionFeed;
 import com.dongxuexidu.douban4j.model.tag.DoubanTagFeed;
 import com.dongxuexidu.douban4j.utils.HttpParamHelper;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import org.apache.http.NameValuePair;
+import org.joda.time.DateTime;
+import org.joda.time.format.DateTimeFormatter;
 
 import java.io.IOException;
 import java.util.List;
@@ -81,5 +85,24 @@ public class DoubanBookService extends DoubanService {
                 DoubanTagFeed.class, false);
     }
 
+    public DoubanCollectionFeed getUserBookCollection(String username,
+                                                      Integer start, Integer count,
+                                                      String status, String tag,
+                                                      DateTime from, DateTime to,
+                                                      Integer rating)
+        throws Exception {
+        String url = RequestUrls.DOUBAN_BOOK_SUBJECT_PREFIX + "/user/" + username + "/collections";
+
+        String fromDatetime = from == null ? null : from.toString("yyyy-MM-dd'T'h:m:ssZ");
+        String toDatetime = to == null ? null : to.toString("yyyy-MM-dd'T'h:m:ssZ");
+
+        return this.client.getResponseInJson(url,
+                HttpParamHelper.buildParams("start", start, "count", count,
+                        "status", status, "tag", tag,
+                        "from", fromDatetime,
+                        "to", toDatetime,
+                        "rating", rating),
+                DoubanCollectionFeed.class, false);
+    }
 
 }
