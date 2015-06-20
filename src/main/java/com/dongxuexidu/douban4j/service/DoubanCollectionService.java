@@ -8,7 +8,7 @@ import com.dongxuexidu.douban4j.model.collection.DoubanCollectionObj;
 import com.dongxuexidu.douban4j.model.common.DoubanAttributeObj;
 import com.dongxuexidu.douban4j.model.common.DoubanRating;
 import com.dongxuexidu.douban4j.model.common.DoubanTag;
-import com.dongxuexidu.douban4j.model.subject.DoubanSubjectObj;
+import com.dongxuexidu.douban4j.model.search.DoubanSubjectObj;
 import com.dongxuexidu.douban4j.utils.Converters;
 import com.dongxuexidu.douban4j.utils.ErrorHandler;
 import org.apache.http.NameValuePair;

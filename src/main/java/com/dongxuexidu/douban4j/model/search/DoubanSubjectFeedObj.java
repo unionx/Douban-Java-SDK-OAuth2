@@ -1,4 +1,4 @@
-package com.dongxuexidu.douban4j.model.subject;
+package com.dongxuexidu.douban4j.model.search;
 
 import com.dongxuexidu.douban4j.model.IDoubanObject;
 import com.google.api.client.util.Key;
@@ -8,6 +8,8 @@ import java.util.List;
 /**
  * @author Zhibo Wei <uglytroll@dongxuexidu.com>
  */
+
+@Deprecated
 public class DoubanSubjectFeedObj implements IDoubanObject {
 
     @Key

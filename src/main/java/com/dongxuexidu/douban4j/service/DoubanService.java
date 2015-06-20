@@ -1,7 +1,7 @@
 package com.dongxuexidu.douban4j.service;
 
 import com.dongxuexidu.douban4j.model.app.DoubanException;
-import com.dongxuexidu.douban4j.model.subject.DoubanSubjectFeedObj;
+import com.dongxuexidu.douban4j.model.search.DoubanSubjectFeedObj;
 import com.dongxuexidu.douban4j.utils.ErrorHandler;
 import com.dongxuexidu.douban4j.utils.HttpManager;
 import org.apache.commons.logging.Log;
@@ -36,28 +36,31 @@ public abstract class DoubanService {
         this.client.setAccessToken(accessToken);
     }
 
-    protected DoubanSubjectFeedObj searchDoubanSubject(String url, String q, String tag,
-                                                       Integer startIndex, Integer maxResult)
+    protected <T> T searchDoubanSubject(String url, String q, String tag,
+                                    Integer start, Integer count, Class<T> resultClass)
             throws DoubanException, IOException {
 
-        List<NameValuePair> params = new ArrayList<NameValuePair>();
+        List<NameValuePair> params = new ArrayList<>();
+
         if (q != null && q.length() > 0) {
             params.add(new BasicNameValuePair("q", q));
         }
         if (tag != null && tag.length() > 0) {
             params.add(new BasicNameValuePair("tag", tag));
         }
+        // q和tag必传其一
         if (params.isEmpty()) {
             throw ErrorHandler.missingRequiredParam();
         }
-        if (startIndex != null) {
-            params.add(new BasicNameValuePair("start-index", startIndex.toString()));
+
+        if (start != null) {
+            params.add(new BasicNameValuePair("start", start.toString()));
         }
-        if (maxResult != null) {
-            params.add(new BasicNameValuePair("max-results", maxResult.toString()));
+        if (count != null) {
+            params.add(new BasicNameValuePair("count", count.toString()));
         }
 
-        return this.client.getResponseInJson(url, params, DoubanSubjectFeedObj.class, false);
+        return this.client.getResponseInJson(url, params, resultClass, false);
     }
 
 }

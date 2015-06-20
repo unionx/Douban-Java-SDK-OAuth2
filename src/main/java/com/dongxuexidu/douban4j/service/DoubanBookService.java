@@ -2,8 +2,9 @@ package com.dongxuexidu.douban4j.service;
 
 import com.dongxuexidu.douban4j.constants.RequestUrls;
 import com.dongxuexidu.douban4j.model.app.DoubanException;
-import com.dongxuexidu.douban4j.model.subject.DoubanSubjectFeedObj;
-import com.dongxuexidu.douban4j.model.subject.DoubanSubjectObj;
+import com.dongxuexidu.douban4j.model.book.DoubanBook;
+import com.dongxuexidu.douban4j.model.book.DoubanBookSearchResult;
+import com.dongxuexidu.douban4j.model.search.DoubanSubjectObj;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 
@@ -27,22 +28,22 @@ public class DoubanBookService extends DoubanService {
         super(accessToken);
     }
 
-    public DoubanSubjectObj getBookInfoById(long bookId)
+    public DoubanBook getBookInfoById(long bookId)
             throws DoubanException, IOException {
         String url = RequestUrls.DOUBAN_BOOK_SUBJECT_PREFIX + "/" + bookId;
-        return this.client.getResponseInJson(url, null, DoubanSubjectObj.class, false);
+        return this.client.getResponseInJson(url, null, DoubanBook.class, false);
     }
 
-    public DoubanSubjectObj getBookInfoByISBN(String isbn)
+    public DoubanBook getBookInfoByISBN(String isbn)
             throws DoubanException, IOException {
         String url = RequestUrls.DOUBAN_BOOK_SUBJECT_PREFIX + "/isbn/" + isbn;
-        return this.client.getResponseInJson(url, null, DoubanSubjectObj.class, false);
+        return this.client.getResponseInJson(url, null, DoubanBook.class, false);
     }
 
-    public DoubanSubjectFeedObj searchBook(String q, String tag)
+    public DoubanBookSearchResult searchBook(String q, String tag)
             throws DoubanException, IOException {
         String url = RequestUrls.DOUBAN_BOOK_SUBJECT_PREFIX + "/search";
-        return searchDoubanSubject(url, q, tag, null, null);
+        return searchDoubanSubject(url, q, tag, null, null, DoubanBookSearchResult.class);
     }
 
 }

@@ -1,6 +1,7 @@
-package com.dongxuexidu.douban4j.model.common;
+package com.dongxuexidu.douban4j.model.book;
 
 import com.dongxuexidu.douban4j.model.IDoubanObject;
+import com.dongxuexidu.douban4j.model.common.*;
 import com.google.api.client.util.Key;
 
 import java.util.ArrayList;

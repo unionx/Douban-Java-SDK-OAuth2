@@ -1,4 +1,4 @@
-package com.dongxuexidu.douban4j.model.subject;
+package com.dongxuexidu.douban4j.model.search;
 
 import com.dongxuexidu.douban4j.model.IDoubanObject;
 import com.dongxuexidu.douban4j.model.common.*;
@@ -13,6 +13,8 @@ import java.util.List;
 /**
  * @author Sean Guo <seanguo85@qq.com>
  */
+
+@Deprecated
 public class DoubanSubjectObj implements IDoubanObject {
 
     @Key

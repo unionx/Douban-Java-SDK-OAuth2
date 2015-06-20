@@ -10,7 +10,7 @@ import com.dongxuexidu.douban4j.model.shuo.DoubanShuoAttachementObj;
 import com.dongxuexidu.douban4j.model.shuo.DoubanShuoMediaObj;
 import com.dongxuexidu.douban4j.model.shuo.DoubanShuoStatusObj;
 import com.dongxuexidu.douban4j.model.shuo.DoubanShuoUserObj;
-import com.dongxuexidu.douban4j.model.subject.DoubanSubjectObj;
+import com.dongxuexidu.douban4j.model.search.DoubanSubjectObj;
 import com.dongxuexidu.douban4j.provider.OAuthDoubanProvider;
 import com.dongxuexidu.douban4j.service.DoubanBookMovieMusicService;
 import com.dongxuexidu.douban4j.service.DoubanMailService;

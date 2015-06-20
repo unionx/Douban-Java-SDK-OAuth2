@@ -1,4 +1,4 @@
-package com.dongxuexidu.douban4j.model.subject;
+package com.dongxuexidu.douban4j.model.search;
 
 import com.google.api.client.util.Key;
 
@@ -6,7 +6,7 @@ import com.google.api.client.util.Key;
  * Created by dxu on 6/19/15.
  * Basic subject feed, search result of musics, books, movies, etc
  */
-public class SubjectFeed {
+public class DoubanSearchResult {
 
     @Key
     private Integer start;

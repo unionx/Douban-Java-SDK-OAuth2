@@ -6,7 +6,7 @@ import com.dongxuexidu.douban4j.model.app.DoubanException;
 import com.dongxuexidu.douban4j.model.common.DoubanRating;
 import com.dongxuexidu.douban4j.model.review.DoubanReviewEntryObj;
 import com.dongxuexidu.douban4j.model.review.DoubanReviewFeedObj;
-import com.dongxuexidu.douban4j.model.subject.DoubanSubjectObj;
+import com.dongxuexidu.douban4j.model.search.DoubanSubjectObj;
 import com.dongxuexidu.douban4j.utils.ErrorHandler;
 import org.apache.http.NameValuePair;
 import org.apache.http.message.BasicNameValuePair;
