@@ -2,9 +2,7 @@ package com.dongxuexidu.douban4j.service;
 
 import com.dongxuexidu.douban4j.constants.DefaultConfigs;
 import com.dongxuexidu.douban4j.model.book.DoubanBook;
-import com.dongxuexidu.douban4j.model.book.DoubanBookSearchResult;
-import com.dongxuexidu.douban4j.model.search.DoubanSubjectFeedObj;
-import com.dongxuexidu.douban4j.model.search.DoubanSubjectObj;
+import com.dongxuexidu.douban4j.model.book.DoubanBookFeed;
 import junit.framework.TestCase;
 import org.apache.commons.lang3.builder.ToStringBuilder;
 import org.apache.commons.logging.Log;
@@ -44,7 +42,7 @@ public class DoubanBookServiceTest extends TestCase {
         log.info("Testing searchBook");
         String q = "C语言";
         DoubanBookService doubanBookService = new DoubanBookService();
-        DoubanBookSearchResult bookSearchResult = doubanBookService.searchBook(q, null);
+        DoubanBookFeed bookSearchResult = doubanBookService.searchBook(q, null);
 
         log.info("Search results is:");
         log.info(ToStringBuilder.reflectionToString(bookSearchResult));

@@ -2,7 +2,7 @@
  * To change this template, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.dongxuexidu.douban4j.model.common;
+package com.dongxuexidu.douban4j.model.tag;
 
 import com.dongxuexidu.douban4j.model.IDoubanObject;
 import com.google.api.client.util.Key;

@@ -5,7 +5,7 @@ import com.dongxuexidu.douban4j.model.common.DoubanAuthor;
 import com.dongxuexidu.douban4j.model.common.DoubanCountObj;
 import com.dongxuexidu.douban4j.model.common.DoubanLinkObj;
 import com.dongxuexidu.douban4j.model.common.DoubanRating;
-import com.dongxuexidu.douban4j.model.search.DoubanSubjectObj;
+import com.dongxuexidu.douban4j.model.feed.DoubanSubjectObj;
 import com.google.api.client.util.Key;
 
 import java.util.List;

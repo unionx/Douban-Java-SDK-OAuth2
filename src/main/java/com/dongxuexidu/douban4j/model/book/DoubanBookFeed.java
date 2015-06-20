@@ -1,6 +1,6 @@
 package com.dongxuexidu.douban4j.model.book;
 
-import com.dongxuexidu.douban4j.model.search.DoubanSearchResult;
+import com.dongxuexidu.douban4j.model.feed.DoubanFeed;
 import com.google.api.client.util.Key;
 
 import java.util.List;
@@ -8,7 +8,7 @@ import java.util.List;
 /**
  * Created by unionx on 15/6/20.
  */
-public class DoubanBookSearchResult extends DoubanSearchResult {
+public class DoubanBookFeed extends DoubanFeed {
 
     @Key
     private List<DoubanBook> books;

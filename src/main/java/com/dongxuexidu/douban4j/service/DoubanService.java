@@ -1,7 +1,6 @@
 package com.dongxuexidu.douban4j.service;
 
 import com.dongxuexidu.douban4j.model.app.DoubanException;
-import com.dongxuexidu.douban4j.model.search.DoubanSubjectFeedObj;
 import com.dongxuexidu.douban4j.utils.ErrorHandler;
 import com.dongxuexidu.douban4j.utils.HttpManager;
 import org.apache.commons.logging.Log;

@@ -1,7 +1,7 @@
 package com.dongxuexidu.douban4j.model.v2;
 
 import com.dongxuexidu.douban4j.model.IDoubanObject;
-import com.dongxuexidu.douban4j.model.search.DoubanSubjectObj;
+import com.dongxuexidu.douban4j.model.feed.DoubanSubjectObj;
 import com.google.api.client.util.Key;
 
 import java.util.ArrayList;

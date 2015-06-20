@@ -1,7 +1,8 @@
-package com.dongxuexidu.douban4j.model.search;
+package com.dongxuexidu.douban4j.model.feed;
 
 import com.dongxuexidu.douban4j.model.IDoubanObject;
 import com.dongxuexidu.douban4j.model.common.*;
+import com.dongxuexidu.douban4j.model.tag.DoubanTag;
 import com.dongxuexidu.douban4j.model.v2.DoubanCastObject;
 import com.dongxuexidu.douban4j.model.v2.DoubanDirectorObj;
 import com.dongxuexidu.douban4j.model.v2.DoubanRatingObj;

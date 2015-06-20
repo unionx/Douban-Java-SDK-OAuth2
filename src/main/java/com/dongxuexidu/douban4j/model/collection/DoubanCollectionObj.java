@@ -4,8 +4,8 @@ import com.dongxuexidu.douban4j.model.IDoubanObject;
 import com.dongxuexidu.douban4j.model.common.DoubanAttributeObj;
 import com.dongxuexidu.douban4j.model.common.DoubanLinkObj;
 import com.dongxuexidu.douban4j.model.common.DoubanRating;
-import com.dongxuexidu.douban4j.model.common.DoubanTag;
-import com.dongxuexidu.douban4j.model.search.DoubanSubjectObj;
+import com.dongxuexidu.douban4j.model.tag.DoubanTag;
+import com.dongxuexidu.douban4j.model.feed.DoubanSubjectObj;
 import com.dongxuexidu.douban4j.model.user.DoubanUserObj;
 import com.google.api.client.util.Key;
 

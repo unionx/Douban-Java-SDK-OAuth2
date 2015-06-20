@@ -2,6 +2,7 @@ package com.dongxuexidu.douban4j.model.book;
 
 import com.dongxuexidu.douban4j.model.IDoubanObject;
 import com.dongxuexidu.douban4j.model.common.*;
+import com.dongxuexidu.douban4j.model.tag.DoubanTag;
 import com.google.api.client.util.Key;
 
 import java.util.ArrayList;

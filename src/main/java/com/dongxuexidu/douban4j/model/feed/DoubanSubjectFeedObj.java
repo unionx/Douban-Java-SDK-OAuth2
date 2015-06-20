@@ -1,4 +1,4 @@
-package com.dongxuexidu.douban4j.model.search;
+package com.dongxuexidu.douban4j.model.feed;
 
 import com.dongxuexidu.douban4j.model.IDoubanObject;
 import com.google.api.client.util.Key;

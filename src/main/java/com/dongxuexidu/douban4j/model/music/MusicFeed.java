@@ -1,12 +1,12 @@
 package com.dongxuexidu.douban4j.model.music;
 
 import com.dongxuexidu.douban4j.model.IDoubanObject;
-import com.dongxuexidu.douban4j.model.search.DoubanSearchResult;
+import com.dongxuexidu.douban4j.model.feed.DoubanFeed;
 
 /**
  * Created by dxu on 6/19/15.
  */
-public class MusicFeed extends DoubanSearchResult implements IDoubanObject {
+public class MusicFeed extends DoubanFeed implements IDoubanObject {
 
 
     @Override

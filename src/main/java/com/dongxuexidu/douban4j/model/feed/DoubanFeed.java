@@ -1,12 +1,14 @@
-package com.dongxuexidu.douban4j.model.search;
+package com.dongxuexidu.douban4j.model.feed;
 
 import com.google.api.client.util.Key;
 
 /**
  * Created by dxu on 6/19/15.
- * Basic subject feed, search result of musics, books, movies, etc
+ * Basic subject collections, like search result of musics, books, movies, etc,
+ * or collection of tags.
  */
-public class DoubanSearchResult {
+
+public class DoubanFeed {
 
     @Key
     private Integer start;
