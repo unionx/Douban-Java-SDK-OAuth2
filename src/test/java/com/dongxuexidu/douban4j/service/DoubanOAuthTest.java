@@ -1,7 +1,6 @@
 package com.dongxuexidu.douban4j.service;
 
 import com.dongxuexidu.douban4j.model.app.RequestGrantScope;
-import com.dongxuexidu.douban4j.playground.BrowserLauncher;
 import com.dongxuexidu.douban4j.provider.OAuthDoubanProvider;
 import junit.framework.TestCase;
 import org.apache.commons.logging.Log;
@@ -24,12 +23,6 @@ public class DoubanOAuthTest extends TestCase {
         provider.addScope(RequestGrantScope.SCOPE_BASIC_COMMON)
                 .addScope(RequestGrantScope.SCOPE_BOOK_READ)
                 .addScope(RequestGrantScope.SCOPE_BOOK_WRITE);
-
-        BrowserLauncher.openURL(provider.getGetCodeRedirectUrl());
-    }
-
-    public void testOpenURL() throws Exception {
-        BrowserLauncher.openURL("http://cn.bing.com");
     }
 
 }

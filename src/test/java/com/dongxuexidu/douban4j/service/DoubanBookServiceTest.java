@@ -5,10 +5,8 @@ import com.dongxuexidu.douban4j.model.book.DoubanBook;
 import com.dongxuexidu.douban4j.model.book.DoubanBookConstant;
 import com.dongxuexidu.douban4j.model.book.DoubanBookFeed;
 import com.dongxuexidu.douban4j.model.collection.DoubanCollectionFeed;
-import com.dongxuexidu.douban4j.model.tag.DoubanTag;
 import com.dongxuexidu.douban4j.model.tag.DoubanTagFeed;
 import junit.framework.TestCase;
-import org.apache.commons.lang3.builder.ToStringBuilder;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 
