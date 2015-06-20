@@ -3,124 +3,124 @@ package com.dongxuexidu.douban4j.model.collection;
 import com.dongxuexidu.douban4j.model.IDoubanObject;
 import com.dongxuexidu.douban4j.model.common.DoubanAuthor;
 import com.google.api.client.util.Key;
+
 import java.util.ArrayList;
 import java.util.List;
 
 /**
- *
  * @author Zhibo Wei <uglytroll@dongxuexidu.com>
  */
-public class DoubanCollectionFeedObj implements IDoubanObject{
-  
-  @Key("entry") 
-  private List<DoubanCollectionObj> collections = new ArrayList<DoubanCollectionObj>();
-  
-  @Key("author")
-  private DoubanAuthor author;
-  
-  @Key
-  private String title;
-  
-  @Key("opensearch:itemsPerPage")
-  private int itemsPerPage;
-  
-  @Key("opensearch:startIndex")
-  private int startIndex;
-  
-  @Key("opensearch:totalResults")
-  private int totalResult;
+public class DoubanCollectionFeedObj implements IDoubanObject {
 
-  @Override
-  public String getObjName() {
-    return "doubancollectionfeed";
-  }
+    @Key("entry")
+    private List<DoubanCollectionObj> collections = new ArrayList<DoubanCollectionObj>();
 
-  /**
-   * @return the collections
-   */
-  public List<DoubanCollectionObj> getCollections() {
-    return collections;
-  }
+    @Key("author")
+    private DoubanAuthor author;
 
-  /**
-   * @param collections the collections to set
-   */
-  public void setCollections(List<DoubanCollectionObj> collections) {
-    this.collections = collections;
-  }
+    @Key
+    private String title;
 
-  /**
-   * @return the author
-   */
-  public DoubanAuthor getAuthor() {
-    return author;
-  }
+    @Key("opensearch:itemsPerPage")
+    private int itemsPerPage;
 
-  /**
-   * @param author the author to set
-   */
-  public void setAuthor(DoubanAuthor author) {
-    this.author = author;
-  }
+    @Key("opensearch:startIndex")
+    private int startIndex;
 
-  /**
-   * @return the title
-   */
-  public String getTitle() {
-    return title;
-  }
+    @Key("opensearch:totalResults")
+    private int totalResult;
 
-  /**
-   * @param title the title to set
-   */
-  public void setTitle(String title) {
-    this.title = title;
-  }
+    @Override
+    public String getObjName() {
+        return "doubancollectionfeed";
+    }
 
-  /**
-   * @return the itemsPerPage
-   */
-  public int getItemsPerPage() {
-    return itemsPerPage;
-  }
+    /**
+     * @return the collections
+     */
+    public List<DoubanCollectionObj> getCollections() {
+        return collections;
+    }
 
-  /**
-   * @param itemsPerPage the itemsPerPage to set
-   */
-  public void setItemsPerPage(int itemsPerPage) {
-    this.itemsPerPage = itemsPerPage;
-  }
+    /**
+     * @param collections the collections to set
+     */
+    public void setCollections(List<DoubanCollectionObj> collections) {
+        this.collections = collections;
+    }
 
-  /**
-   * @return the startIndex
-   */
-  public int getStartIndex() {
-    return startIndex;
-  }
+    /**
+     * @return the author
+     */
+    public DoubanAuthor getAuthor() {
+        return author;
+    }
 
-  /**
-   * @param startIndex the startIndex to set
-   */
-  public void setStartIndex(int startIndex) {
-    this.startIndex = startIndex;
-  }
+    /**
+     * @param author the author to set
+     */
+    public void setAuthor(DoubanAuthor author) {
+        this.author = author;
+    }
 
-  /**
-   * @return the totalResult
-   */
-  public int getTotalResult() {
-    return totalResult;
-  }
+    /**
+     * @return the title
+     */
+    public String getTitle() {
+        return title;
+    }
 
-  /**
-   * @param totalResult the totalResult to set
-   */
-  public void setTotalResult(int totalResult) {
-    this.totalResult = totalResult;
-  }
-  
-  public boolean hasCollectionEntries () {
-    return (this.collections != null && this.collections.size() > 0);
-  }
-  
+    /**
+     * @param title the title to set
+     */
+    public void setTitle(String title) {
+        this.title = title;
+    }
+
+    /**
+     * @return the itemsPerPage
+     */
+    public int getItemsPerPage() {
+        return itemsPerPage;
+    }
+
+    /**
+     * @param itemsPerPage the itemsPerPage to set
+     */
+    public void setItemsPerPage(int itemsPerPage) {
+        this.itemsPerPage = itemsPerPage;
+    }
+
+    /**
+     * @return the startIndex
+     */
+    public int getStartIndex() {
+        return startIndex;
+    }
+
+    /**
+     * @param startIndex the startIndex to set
+     */
+    public void setStartIndex(int startIndex) {
+        this.startIndex = startIndex;
+    }
+
+    /**
+     * @return the totalResult
+     */
+    public int getTotalResult() {
+        return totalResult;
+    }
+
+    /**
+     * @param totalResult the totalResult to set
+     */
+    public void setTotalResult(int totalResult) {
+        this.totalResult = totalResult;
+    }
+
+    public boolean hasCollectionEntries() {
+        return (this.collections != null && this.collections.size() > 0);
+    }
+
 }

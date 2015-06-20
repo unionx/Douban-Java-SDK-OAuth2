@@ -4,31 +4,30 @@ import com.dongxuexidu.douban4j.model.IDoubanObject;
 import com.google.api.client.util.Key;
 
 /**
- *
  * @author Zhibo Wei <uglytroll@dongxuexidu.com>
  */
-public class DoubanWhereObj implements IDoubanObject{
-  
-  @Key("@valueString")
-  private String value;
+public class DoubanWhereObj implements IDoubanObject {
 
-  @Override
-  public String getObjName() {
-    return "doubanwhere";
-  }
+    @Key("@valueString")
+    private String value;
 
-  /**
-   * @return the value
-   */
-  public String getValue() {
-    return value;
-  }
+    @Override
+    public String getObjName() {
+        return "doubanwhere";
+    }
 
-  /**
-   * @param value the value to set
-   */
-  public void setValue(String value) {
-    this.value = value;
-  }
-  
+    /**
+     * @return the value
+     */
+    public String getValue() {
+        return value;
+    }
+
+    /**
+     * @param value the value to set
+     */
+    public void setValue(String value) {
+        this.value = value;
+    }
+
 }

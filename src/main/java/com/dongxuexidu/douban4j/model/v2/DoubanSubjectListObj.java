@@ -1,56 +1,54 @@
 package com.dongxuexidu.douban4j.model.v2;
 
-import java.util.ArrayList;
-import java.util.List;
-
 import com.dongxuexidu.douban4j.model.IDoubanObject;
 import com.dongxuexidu.douban4j.model.subject.DoubanSubjectObj;
 import com.google.api.client.util.Key;
 
+import java.util.ArrayList;
+import java.util.List;
+
 /**
- * 
  * @author Sean Guo <seanguo85@qq.com>
- *
  */
 public class DoubanSubjectListObj implements IDoubanObject {
-  
-  @Key
-  private int count;
-  
-  @Key
-  private int start;
-  
-  @Key
-  private int total;
-  
-  @Key
-  private List<DoubanSubjectObj> subjects = new ArrayList<DoubanSubjectObj>();
-  
-  @Key
-  private String title;
 
-  @Override
-  public String getObjName() {
-    return "DoubanSubjectList";
-  }
+    @Key
+    private int count;
 
-  public int getCount() {
-    return count;
-  }
+    @Key
+    private int start;
 
-  public int getStart() {
-    return start;
-  }
+    @Key
+    private int total;
 
-  public int getTotal() {
-    return total;
-  }
+    @Key
+    private List<DoubanSubjectObj> subjects = new ArrayList<DoubanSubjectObj>();
 
-  public List<DoubanSubjectObj> getSubjects() {
-    return subjects;
-  }
+    @Key
+    private String title;
 
-  public String getTitle() {
-    return title;
-  }
+    @Override
+    public String getObjName() {
+        return "DoubanSubjectList";
+    }
+
+    public int getCount() {
+        return count;
+    }
+
+    public int getStart() {
+        return start;
+    }
+
+    public int getTotal() {
+        return total;
+    }
+
+    public List<DoubanSubjectObj> getSubjects() {
+        return subjects;
+    }
+
+    public String getTitle() {
+        return title;
+    }
 }

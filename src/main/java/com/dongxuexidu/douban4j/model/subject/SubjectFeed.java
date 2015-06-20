@@ -1,6 +1,5 @@
 package com.dongxuexidu.douban4j.model.subject;
 
-import com.dongxuexidu.douban4j.model.IDoubanObject;
 import com.google.api.client.util.Key;
 
 /**

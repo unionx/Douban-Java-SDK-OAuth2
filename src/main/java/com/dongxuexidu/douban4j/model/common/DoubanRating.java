@@ -6,100 +6,100 @@ package com.dongxuexidu.douban4j.model.common;
 
 import com.dongxuexidu.douban4j.model.IDoubanObject;
 import com.google.api.client.util.Key;
+
 /**
- *
  * @author Zhibo Wei <uglytroll@dongxuexidu.com>
  */
-public class DoubanRating implements IDoubanObject{
+public class DoubanRating implements IDoubanObject {
 
-  @Override
-  public String getObjName() {
-    return "rating";
-  }
-  
-  // @Key("@min")
-  private int min;
-  
-  // @Key("@max")
-  private int max;
-  
-  // @Key("@value")
-  private int value;
-  
-  // @Key("@average")
-  private float average;
-  
-  @Key("@numRaters")
-  private int numberOfRaters = 0;
+    @Override
+    public String getObjName() {
+        return "rating";
+    }
 
-  /**
-   * @return the min
-   */
-  public int getMin() {
-    return min;
-  }
+    // @Key("@min")
+    private int min;
 
-  /**
-   * @param min the min to set
-   */
-  public void setMin(int min) {
-    this.min = min;
-  }
+    // @Key("@max")
+    private int max;
 
-  /**
-   * @return the max
-   */
-  public int getMax() {
-    return max;
-  }
+    // @Key("@value")
+    private int value;
 
-  /**
-   * @param max the max to set
-   */
-  public void setMax(int max) {
-    this.max = max;
-  }
+    // @Key("@average")
+    private float average;
 
-  /**
-   * @return the value
-   */
-  public int getValue() {
-    return value;
-  }
+    @Key("@numRaters")
+    private int numberOfRaters = 0;
 
-  /**
-   * @return the numberOfRaters
-   */
-  public int getNumberOfRaters() {
-    return numberOfRaters;
-  }
+    /**
+     * @return the min
+     */
+    public int getMin() {
+        return min;
+    }
 
-  /**
-   * @param numberOfRaters the numberOfRaters to set
-   */
-  public void setNumberOfRaters(int numberOfRaters) {
-    this.numberOfRaters = numberOfRaters;
-  }
+    /**
+     * @param min the min to set
+     */
+    public void setMin(int min) {
+        this.min = min;
+    }
 
-  /**
-   * @param value the value to set
-   */
-  public void setValue(int value) {
-    this.value = value;
-  }
+    /**
+     * @return the max
+     */
+    public int getMax() {
+        return max;
+    }
 
-  /**
-   * @return the average
-   */
-  public float getAverage() {
-    return average;
-  }
+    /**
+     * @param max the max to set
+     */
+    public void setMax(int max) {
+        this.max = max;
+    }
 
-  /**
-   * @param average the average to set
-   */
-  public void setAverage(float average) {
-    this.average = average;
-  }
-  
+    /**
+     * @return the value
+     */
+    public int getValue() {
+        return value;
+    }
+
+    /**
+     * @return the numberOfRaters
+     */
+    public int getNumberOfRaters() {
+        return numberOfRaters;
+    }
+
+    /**
+     * @param numberOfRaters the numberOfRaters to set
+     */
+    public void setNumberOfRaters(int numberOfRaters) {
+        this.numberOfRaters = numberOfRaters;
+    }
+
+    /**
+     * @param value the value to set
+     */
+    public void setValue(int value) {
+        this.value = value;
+    }
+
+    /**
+     * @return the average
+     */
+    public float getAverage() {
+        return average;
+    }
+
+    /**
+     * @param average the average to set
+     */
+    public void setAverage(float average) {
+        this.average = average;
+    }
+
 }

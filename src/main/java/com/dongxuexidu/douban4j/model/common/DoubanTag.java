@@ -8,48 +8,47 @@ import com.dongxuexidu.douban4j.model.IDoubanObject;
 import com.google.api.client.util.Key;
 
 /**
- *
  * @author Zhibo Wei <uglytroll@dongxuexidu.com>
  */
-public class DoubanTag implements IDoubanObject{
+public class DoubanTag implements IDoubanObject {
 
-  @Override
-  public String getObjName() {
-    return "tag";
-  }
-  
-  @Key("@name")
-  private String name;
-  
-  @Key("@count")
-  private String count;
+    @Override
+    public String getObjName() {
+        return "tag";
+    }
 
-  /**
-   * @return the name
-   */
-  public String getName() {
-    return name;
-  }
+    @Key("@name")
+    private String name;
 
-  /**
-   * @param name the name to set
-   */
-  public void setName(String name) {
-    this.name = name;
-  }
+    @Key("@count")
+    private String count;
 
-  /**
-   * @return the count
-   */
-  public String getCount() {
-    return count;
-  }
+    /**
+     * @return the name
+     */
+    public String getName() {
+        return name;
+    }
 
-  /**
-   * @param count the count to set
-   */
-  public void setCount(String count) {
-    this.count = count;
-  }
-  
+    /**
+     * @param name the name to set
+     */
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    /**
+     * @return the count
+     */
+    public String getCount() {
+        return count;
+    }
+
+    /**
+     * @param count the count to set
+     */
+    public void setCount(String count) {
+        this.count = count;
+    }
+
 }

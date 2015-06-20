@@ -4,74 +4,72 @@ import com.dongxuexidu.douban4j.model.IDoubanObject;
 import com.google.api.client.util.Key;
 
 /**
- * 
  * @author Sean Guo <seanguo85@qq.com>
- *
  */
 public class DoubanRatingObj implements IDoubanObject {
-  
-  @Key
-  private int max;
-  
-  @Key
-  private float average;
-  
-  @Key
-  private int stars;
-  
-  @Key
-  private int min;
 
-  @Key
-  private int value;
+    @Key
+    private int max;
 
-  @Key("@numRaters")
-  private int numberOfRaters = 0;
+    @Key
+    private float average;
 
-  @Override
-  public String getObjName() {
-    return "DoubanRating";
-  }
+    @Key
+    private int stars;
 
-  public int getMax() {
-    return max;
-  }
+    @Key
+    private int min;
 
-  public float getAverage() {
-    return average;
-  }
+    @Key
+    private int value;
 
-  public int getStars() {
-    return stars;
-  }
+    @Key("@numRaters")
+    private int numberOfRaters = 0;
 
-  public int getMin() {
-    return min;
-  }
+    @Override
+    public String getObjName() {
+        return "DoubanRating";
+    }
 
-  /**
-   * @return the value
-   */
-  public int getValue() {
-    return value;
-  }
+    public int getMax() {
+        return max;
+    }
 
-  /**
-   * @return the numberOfRaters
-   */
-  public int getNumberOfRaters() {
-    return numberOfRaters;
-  }
+    public float getAverage() {
+        return average;
+    }
 
-  /**
-   * @param numberOfRaters the numberOfRaters to set
-   */
-  public void setNumberOfRaters(int numberOfRaters) {
-    this.numberOfRaters = numberOfRaters;
-  }
+    public int getStars() {
+        return stars;
+    }
 
-  @Override
-  public String toString() {
-    return "DoubanRating [max=" + max + ", average=" + average + ", stars=" + stars + ", min=" + min + "]";
-  }
+    public int getMin() {
+        return min;
+    }
+
+    /**
+     * @return the value
+     */
+    public int getValue() {
+        return value;
+    }
+
+    /**
+     * @return the numberOfRaters
+     */
+    public int getNumberOfRaters() {
+        return numberOfRaters;
+    }
+
+    /**
+     * @param numberOfRaters the numberOfRaters to set
+     */
+    public void setNumberOfRaters(int numberOfRaters) {
+        this.numberOfRaters = numberOfRaters;
+    }
+
+    @Override
+    public String toString() {
+        return "DoubanRating [max=" + max + ", average=" + average + ", stars=" + stars + ", min=" + min + "]";
+    }
 }

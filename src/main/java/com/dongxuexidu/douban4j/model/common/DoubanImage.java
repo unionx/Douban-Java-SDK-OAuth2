@@ -1,53 +1,50 @@
 package com.dongxuexidu.douban4j.model.common;
 
 import com.dongxuexidu.douban4j.model.IDoubanObject;
-import com.google.api.client.util.Key;
 
 /**
- * 
  * @author Sean Guo <seanguo85@qq.com>
- *
  */
 public class DoubanImage implements IDoubanObject {
 
-	@Override
-	public String getObjName() {
-		return "image";
-	}
+    @Override
+    public String getObjName() {
+        return "image";
+    }
 
-	private String small;
+    private String small;
 
-	private String medium;
+    private String medium;
 
-	private String large;
+    private String large;
 
-	public String getSmall() {
-		return small;
-	}
+    public String getSmall() {
+        return small;
+    }
 
-	public void setSmall(String small) {
-		this.small = small;
-	}
+    public void setSmall(String small) {
+        this.small = small;
+    }
 
-	public String getMedium() {
-		return medium;
-	}
+    public String getMedium() {
+        return medium;
+    }
 
-	public void setMedium(String medium) {
-		this.medium = medium;
-	}
+    public void setMedium(String medium) {
+        this.medium = medium;
+    }
 
-	public String getLarge() {
-		return large;
-	}
+    public String getLarge() {
+        return large;
+    }
 
-	public void setLarge(String large) {
-		this.large = large;
-	}
+    public void setLarge(String large) {
+        this.large = large;
+    }
 
-	@Override
-	public String toString() {
-		return "DoubanImage [small=" + small + ", medium=" + medium
-				+ ", large=" + large + "]";
-	}
+    @Override
+    public String toString() {
+        return "DoubanImage [small=" + small + ", medium=" + medium
+                + ", large=" + large + "]";
+    }
 }

@@ -4,167 +4,167 @@ import com.dongxuexidu.douban4j.model.IDoubanObject;
 import com.dongxuexidu.douban4j.model.common.DoubanLinkObj;
 import com.dongxuexidu.douban4j.model.common.DoubanLocationObj;
 import com.google.api.client.util.Key;
+
 import java.util.List;
 
 /**
- *
  * @author Zhibo Wei <uglytroll@dongxuexidu.com>
  */
 public class DoubanUserObj implements IDoubanObject {
 
-  @Key
-  private String id;
-  
-  @Key
-  private String title;
-  
-  @Key ("link")
-  private List<DoubanLinkObj> links;
-  
-  @Key
-  private String content;
-  
-  @Key ("db:location")
-  private DoubanLocationObj location;
+    @Key
+    private String id;
 
-  @Key ("db:signature")
-  private String signature;
-  
-  @Key ("db:uid")
-  private String uid;
-  
-  @Key
-  private String uri;
+    @Key
+    private String title;
 
-  @Override
-  public String getObjName() {
-    return "doubanuser";
-  }
+    @Key("link")
+    private List<DoubanLinkObj> links;
 
-  /**
-   * @return the id
-   */
-  public String getId() {
-    return id;
-  }
+    @Key
+    private String content;
 
-  /**
-   * @param id the id to set
-   */
-  public void setId(String id) {
-    this.id = id;
-  }
+    @Key("db:location")
+    private DoubanLocationObj location;
 
-  /**
-   * @return the title
-   */
-  public String getTitle() {
-    return title;
-  }
+    @Key("db:signature")
+    private String signature;
 
-  /**
-   * @param title the title to set
-   */
-  public void setTitle(String title) {
-    this.title = title;
-  }
+    @Key("db:uid")
+    private String uid;
 
-  /**
-   * @return the links
-   */
-  public List<DoubanLinkObj> getLinks() {
-    return links;
-  }
-  
-  public void setLinks (List<DoubanLinkObj> links) {
-    this.links = links;
-  }
+    @Key
+    private String uri;
 
-  /**
-   * @param links the links to set
-   */
-  public void addLink(String href, String rel) {
-    this.links.add(new DoubanLinkObj(href, rel));
-  }
-  
-  public String getLinkByRel (String rel) {
-    for (DoubanLinkObj obj : this.links) {
-      if (obj.getRel().equalsIgnoreCase(rel)) {
-        return obj.getHref();
-      }
+    @Override
+    public String getObjName() {
+        return "doubanuser";
     }
-    return null;
-  }
 
-  /**
-   * @return the content
-   */
-  public String getContent() {
-    return content;
-  }
+    /**
+     * @return the id
+     */
+    public String getId() {
+        return id;
+    }
 
-  /**
-   * @param content the content to set
-   */
-  public void setContent(String content) {
-    this.content = content;
-  }
+    /**
+     * @param id the id to set
+     */
+    public void setId(String id) {
+        this.id = id;
+    }
 
-  /**
-   * @return the location
-   */
-  public DoubanLocationObj getLocation() {
-    return location;
-  }
+    /**
+     * @return the title
+     */
+    public String getTitle() {
+        return title;
+    }
 
-  /**
-   * @param location the location to set
-   */
-  public void setLocation(DoubanLocationObj location) {
-    this.location = location;
-  }
+    /**
+     * @param title the title to set
+     */
+    public void setTitle(String title) {
+        this.title = title;
+    }
 
-  /**
-   * @return the signature
-   */
-  public String getSignature() {
-    return signature;
-  }
+    /**
+     * @return the links
+     */
+    public List<DoubanLinkObj> getLinks() {
+        return links;
+    }
 
-  /**
-   * @param signature the signature to set
-   */
-  public void setSignature(String signature) {
-    this.signature = signature;
-  }
+    public void setLinks(List<DoubanLinkObj> links) {
+        this.links = links;
+    }
 
-  /**
-   * @return the uid
-   */
-  public String getUid() {
-    return uid;
-  }
+    /**
+     * @param links the links to set
+     */
+    public void addLink(String href, String rel) {
+        this.links.add(new DoubanLinkObj(href, rel));
+    }
 
-  /**
-   * @param uid the uid to set
-   */
-  public void setUid(String uid) {
-    this.uid = uid;
-  }
+    public String getLinkByRel(String rel) {
+        for (DoubanLinkObj obj : this.links) {
+            if (obj.getRel().equalsIgnoreCase(rel)) {
+                return obj.getHref();
+            }
+        }
+        return null;
+    }
 
-  /**
-   * @return the uri
-   */
-  public String getUri() {
-    return uri;
-  }
+    /**
+     * @return the content
+     */
+    public String getContent() {
+        return content;
+    }
 
-  /**
-   * @param uri the uri to set
-   */
-  public void setUri(String uri) {
-    this.uri = uri;
-  }
- 
+    /**
+     * @param content the content to set
+     */
+    public void setContent(String content) {
+        this.content = content;
+    }
+
+    /**
+     * @return the location
+     */
+    public DoubanLocationObj getLocation() {
+        return location;
+    }
+
+    /**
+     * @param location the location to set
+     */
+    public void setLocation(DoubanLocationObj location) {
+        this.location = location;
+    }
+
+    /**
+     * @return the signature
+     */
+    public String getSignature() {
+        return signature;
+    }
+
+    /**
+     * @param signature the signature to set
+     */
+    public void setSignature(String signature) {
+        this.signature = signature;
+    }
+
+    /**
+     * @return the uid
+     */
+    public String getUid() {
+        return uid;
+    }
+
+    /**
+     * @param uid the uid to set
+     */
+    public void setUid(String uid) {
+        this.uid = uid;
+    }
+
+    /**
+     * @return the uri
+     */
+    public String getUri() {
+        return uri;
+    }
+
+    /**
+     * @param uri the uri to set
+     */
+    public void setUri(String uri) {
+        this.uri = uri;
+    }
+
 
 }

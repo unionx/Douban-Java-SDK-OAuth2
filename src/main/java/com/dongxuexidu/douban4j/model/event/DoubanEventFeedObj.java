@@ -4,144 +4,144 @@ import com.dongxuexidu.douban4j.model.IDoubanObject;
 import com.dongxuexidu.douban4j.model.common.DoubanAuthor;
 import com.dongxuexidu.douban4j.model.common.DoubanLinkObj;
 import com.google.api.client.util.Key;
+
 import java.util.List;
 
 /**
- *
  * @author Zhibo Wei <uglytroll@dongxuexidu.com>
  */
-public class DoubanEventFeedObj implements IDoubanObject{
-  
-  @Key
-  private String title;
-  
-  @Key("author")
-  private DoubanAuthor author;
-  
-  @Key("link")
-  private List<DoubanLinkObj> links;
-  
-  @Key("opensearch:itemsPerPage")
-  private int itemsPerPage;
-  
-  @Key("opensearch:startIndex")
-  private int startIndex;
-  
-  @Key("opensearch:totalResults")
-  private int totalResult;
-  
-  @Key("entry")
-  private List<DoubanEventEntryObj> entries;
+public class DoubanEventFeedObj implements IDoubanObject {
 
-  @Override
-  public String getObjName() {
-    return "doubaneventfeed";
-  }
+    @Key
+    private String title;
 
-  /**
-   * @return the title
-   */
-  public String getTitle() {
-    return title;
-  }
+    @Key("author")
+    private DoubanAuthor author;
 
-  /**
-   * @param title the title to set
-   */
-  public void setTitle(String title) {
-    this.title = title;
-  }
+    @Key("link")
+    private List<DoubanLinkObj> links;
 
-  /**
-   * @return the author
-   */
-  public DoubanAuthor getAuthor() {
-    return author;
-  }
+    @Key("opensearch:itemsPerPage")
+    private int itemsPerPage;
 
-  /**
-   * @param author the author to set
-   */
-  public void setAuthor(DoubanAuthor author) {
-    this.author = author;
-  }
+    @Key("opensearch:startIndex")
+    private int startIndex;
 
-  public void setLinks (List<DoubanLinkObj> links) {
-    this.links = links;
-  }
-  
-  public void addLink(DoubanLinkObj link) {
-    this.links.add(link);
-  }
-  
-  public String getLinkByRel (String rel) {
-    for (DoubanLinkObj obj : this.links) {
-      if (obj.getRel().equalsIgnoreCase(rel)) {
-        return obj.getHref();
-      }
+    @Key("opensearch:totalResults")
+    private int totalResult;
+
+    @Key("entry")
+    private List<DoubanEventEntryObj> entries;
+
+    @Override
+    public String getObjName() {
+        return "doubaneventfeed";
     }
-    return null;
-  }
-  
-  public List<DoubanLinkObj> getLinks() {
-    return this.links;
-  }
 
-  /**
-   * @return the itemsPerPage
-   */
-  public int getItemsPerPage() {
-    return itemsPerPage;
-  }
+    /**
+     * @return the title
+     */
+    public String getTitle() {
+        return title;
+    }
 
-  /**
-   * @param itemsPerPage the itemsPerPage to set
-   */
-  public void setItemsPerPage(int itemsPerPage) {
-    this.itemsPerPage = itemsPerPage;
-  }
+    /**
+     * @param title the title to set
+     */
+    public void setTitle(String title) {
+        this.title = title;
+    }
 
-  /**
-   * @return the startIndex
-   */
-  public int getStartIndex() {
-    return startIndex;
-  }
+    /**
+     * @return the author
+     */
+    public DoubanAuthor getAuthor() {
+        return author;
+    }
 
-  /**
-   * @param startIndex the startIndex to set
-   */
-  public void setStartIndex(int startIndex) {
-    this.startIndex = startIndex;
-  }
+    /**
+     * @param author the author to set
+     */
+    public void setAuthor(DoubanAuthor author) {
+        this.author = author;
+    }
 
-  /**
-   * @return the totalResult
-   */
-  public int getTotalResult() {
-    return totalResult;
-  }
+    public void setLinks(List<DoubanLinkObj> links) {
+        this.links = links;
+    }
 
-  /**
-   * @param totalResult the totalResult to set
-   */
-  public void setTotalResult(int totalResult) {
-    this.totalResult = totalResult;
-  }
+    public void addLink(DoubanLinkObj link) {
+        this.links.add(link);
+    }
 
-  /**
-   * @return the entries
-   */
-  public List<DoubanEventEntryObj> getEntries() {
-    return entries;
-  }
+    public String getLinkByRel(String rel) {
+        for (DoubanLinkObj obj : this.links) {
+            if (obj.getRel().equalsIgnoreCase(rel)) {
+                return obj.getHref();
+            }
+        }
+        return null;
+    }
 
-  /**
-   * @param entries the entries to set
-   */
-  public void setEntries(List<DoubanEventEntryObj> entries) {
-    this.entries = entries;
-  }
-  
-  
+    public List<DoubanLinkObj> getLinks() {
+        return this.links;
+    }
+
+    /**
+     * @return the itemsPerPage
+     */
+    public int getItemsPerPage() {
+        return itemsPerPage;
+    }
+
+    /**
+     * @param itemsPerPage the itemsPerPage to set
+     */
+    public void setItemsPerPage(int itemsPerPage) {
+        this.itemsPerPage = itemsPerPage;
+    }
+
+    /**
+     * @return the startIndex
+     */
+    public int getStartIndex() {
+        return startIndex;
+    }
+
+    /**
+     * @param startIndex the startIndex to set
+     */
+    public void setStartIndex(int startIndex) {
+        this.startIndex = startIndex;
+    }
+
+    /**
+     * @return the totalResult
+     */
+    public int getTotalResult() {
+        return totalResult;
+    }
+
+    /**
+     * @param totalResult the totalResult to set
+     */
+    public void setTotalResult(int totalResult) {
+        this.totalResult = totalResult;
+    }
+
+    /**
+     * @return the entries
+     */
+    public List<DoubanEventEntryObj> getEntries() {
+        return entries;
+    }
+
+    /**
+     * @param entries the entries to set
+     */
+    public void setEntries(List<DoubanEventEntryObj> entries) {
+        this.entries = entries;
+    }
+
+
 }

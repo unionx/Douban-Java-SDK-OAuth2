@@ -8,216 +8,216 @@ import com.dongxuexidu.douban4j.model.common.DoubanTag;
 import com.dongxuexidu.douban4j.model.subject.DoubanSubjectObj;
 import com.dongxuexidu.douban4j.model.user.DoubanUserObj;
 import com.google.api.client.util.Key;
+
 import java.util.ArrayList;
 import java.util.List;
 
 /**
- *
  * @author Zhibo Wei <uglytroll@dongxuexidu.com>
  */
-public class DoubanCollectionObj implements IDoubanObject{
+public class DoubanCollectionObj implements IDoubanObject {
 
-  @Override
-  public String getObjName() {
-    return "doubancollection";
-  }
-  
-  @Key("updated")
-  private String updateTime = null;
-  
-  @Key("db:tag")
-  private List<DoubanTag> tags = new ArrayList<DoubanTag>();
-  
-  @Key("author")
-  private DoubanUserObj author = null;
-  
-  @Key
-  private String title = "";
-  
-  @Key("link")
-  private List<DoubanLinkObj> links = new ArrayList<DoubanLinkObj>();
-  
-  @Key
-  private String id;
-  
-  @Key("db:subject")
-  private DoubanSubjectObj subject = null;
-  
-  @Key("db:status")
-  private String status;
-  
-  @Key("gd:rating")
-  private DoubanRating rating = null;
-  
-  @Key("content")
-  private String content;
-  
-  @Key("db:attribute")
-  private List<DoubanAttributeObj> att;
-
-  /**
-   * @return the updateTime
-   */
-  public String getUpdateTime() {
-    return updateTime;
-  }
-
-  /**
-   * @param updateTime the updateTime to set
-   */
-  public void setUpdateTime(String updateTime) {
-    this.updateTime = updateTime;
-  }
-
-  /**
-   * @return the tags
-   */
-  public List<DoubanTag> getTags() {
-    return tags;
-  }
-
-  /**
-   * @param tags the tags to set
-   */
-  public void setTags(List<DoubanTag> tags) {
-    this.tags = tags;
-  }
-  
-  public void addTag (DoubanTag tag) {
-    this.tags.add(tag);
-  }
-
-  /**
-   * @return the author
-   */
-  public DoubanUserObj getAuthor() {
-    return author;
-  }
-
-  /**
-   * @param author the author to set
-   */
-  public void setAuthor(DoubanUserObj author) {
-    this.author = author;
-  }
-
-  /**
-   * @return the title
-   */
-  public String getTitle() {
-    return title;
-  }
-
-  /**
-   * @param title the title to set
-   */
-  public void setTitle(String title) {
-    this.title = title;
-  }
-  
-  public void setLinks (List<DoubanLinkObj> links) {
-    this.links = links;
-  }
-  
-  public void addLink(DoubanLinkObj link) {
-    this.links.add(link);
-  }
-  
-  public String getLinkByRel (String rel) {
-    for (DoubanLinkObj obj : this.links) {
-      if (obj.getRel().equalsIgnoreCase(rel)) {
-        return obj.getHref();
-      }
+    @Override
+    public String getObjName() {
+        return "doubancollection";
     }
-    return null;
-  }
-  
-  public List<DoubanLinkObj> getLinks() {
-    return this.links;
-  }
 
-  /**
-   * @return the id
-   */
-  public String getId() {
-    return id;
-  }
+    @Key("updated")
+    private String updateTime = null;
 
-  /**
-   * @param id the id to set
-   */
-  public void setId(String id) {
-    this.id = id;
-  }
+    @Key("db:tag")
+    private List<DoubanTag> tags = new ArrayList<DoubanTag>();
 
-  /**
-   * @return the subject
-   */
-  public DoubanSubjectObj getSubject() {
-    return subject;
-  }
+    @Key("author")
+    private DoubanUserObj author = null;
 
-  /**
-   * @param subject the subject to set
-   */
-  public void setSubject(DoubanSubjectObj subject) {
-    this.subject = subject;
-  }
+    @Key
+    private String title = "";
 
-  /**
-   * @return the status
-   */
-  public String getStatus() {
-    return status;
-  }
+    @Key("link")
+    private List<DoubanLinkObj> links = new ArrayList<DoubanLinkObj>();
 
-  /**
-   * @param status the status to set
-   */
-  public void setStatus(String status) {
-    this.status = status;
-  }
+    @Key
+    private String id;
 
-  /**
-   * @return the rating
-   */
-  public DoubanRating getRating() {
-    return rating;
-  }
+    @Key("db:subject")
+    private DoubanSubjectObj subject = null;
 
-  /**
-   * @param rating the rating to set
-   */
-  public void setRating(DoubanRating rating) {
-    this.rating = rating;
-  }
+    @Key("db:status")
+    private String status;
 
-  /**
-   * @return the content
-   */
-  public String getContent() {
-    return content;
-  }
+    @Key("gd:rating")
+    private DoubanRating rating = null;
 
-  /**
-   * @param content the content to set
-   */
-  public void setContent(String content) {
-    this.content = content;
-  }
+    @Key("content")
+    private String content;
 
-  /**
-   * @return the att
-   */
-  public List<DoubanAttributeObj> getAtt() {
-    return att;
-  }
+    @Key("db:attribute")
+    private List<DoubanAttributeObj> att;
 
-  /**
-   * @param att the att to set
-   */
-  public void setAtt(List<DoubanAttributeObj> att) {
-    this.att = att;
-  }
-  
+    /**
+     * @return the updateTime
+     */
+    public String getUpdateTime() {
+        return updateTime;
+    }
+
+    /**
+     * @param updateTime the updateTime to set
+     */
+    public void setUpdateTime(String updateTime) {
+        this.updateTime = updateTime;
+    }
+
+    /**
+     * @return the tags
+     */
+    public List<DoubanTag> getTags() {
+        return tags;
+    }
+
+    /**
+     * @param tags the tags to set
+     */
+    public void setTags(List<DoubanTag> tags) {
+        this.tags = tags;
+    }
+
+    public void addTag(DoubanTag tag) {
+        this.tags.add(tag);
+    }
+
+    /**
+     * @return the author
+     */
+    public DoubanUserObj getAuthor() {
+        return author;
+    }
+
+    /**
+     * @param author the author to set
+     */
+    public void setAuthor(DoubanUserObj author) {
+        this.author = author;
+    }
+
+    /**
+     * @return the title
+     */
+    public String getTitle() {
+        return title;
+    }
+
+    /**
+     * @param title the title to set
+     */
+    public void setTitle(String title) {
+        this.title = title;
+    }
+
+    public void setLinks(List<DoubanLinkObj> links) {
+        this.links = links;
+    }
+
+    public void addLink(DoubanLinkObj link) {
+        this.links.add(link);
+    }
+
+    public String getLinkByRel(String rel) {
+        for (DoubanLinkObj obj : this.links) {
+            if (obj.getRel().equalsIgnoreCase(rel)) {
+                return obj.getHref();
+            }
+        }
+        return null;
+    }
+
+    public List<DoubanLinkObj> getLinks() {
+        return this.links;
+    }
+
+    /**
+     * @return the id
+     */
+    public String getId() {
+        return id;
+    }
+
+    /**
+     * @param id the id to set
+     */
+    public void setId(String id) {
+        this.id = id;
+    }
+
+    /**
+     * @return the subject
+     */
+    public DoubanSubjectObj getSubject() {
+        return subject;
+    }
+
+    /**
+     * @param subject the subject to set
+     */
+    public void setSubject(DoubanSubjectObj subject) {
+        this.subject = subject;
+    }
+
+    /**
+     * @return the status
+     */
+    public String getStatus() {
+        return status;
+    }
+
+    /**
+     * @param status the status to set
+     */
+    public void setStatus(String status) {
+        this.status = status;
+    }
+
+    /**
+     * @return the rating
+     */
+    public DoubanRating getRating() {
+        return rating;
+    }
+
+    /**
+     * @param rating the rating to set
+     */
+    public void setRating(DoubanRating rating) {
+        this.rating = rating;
+    }
+
+    /**
+     * @return the content
+     */
+    public String getContent() {
+        return content;
+    }
+
+    /**
+     * @param content the content to set
+     */
+    public void setContent(String content) {
+        this.content = content;
+    }
+
+    /**
+     * @return the att
+     */
+    public List<DoubanAttributeObj> getAtt() {
+        return att;
+    }
+
+    /**
+     * @param att the att to set
+     */
+    public void setAtt(List<DoubanAttributeObj> att) {
+        this.att = att;
+    }
+
 }
