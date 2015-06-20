@@ -29,7 +29,9 @@ import java.util.logging.Logger;
 
 /**
  * @author Zhibo Wei <uglytroll@dongxuexidu.com>
+ * TODO: Tests in this file will be moved to src/test
  */
+
 public class PlayGround {
 
     /**
@@ -39,7 +41,7 @@ public class PlayGround {
      * xmlns:openSearch="http://a9.com/-/spec/opensearchrss/1.0/"
      * xmlns:opensearch="http://a9.com/-/spec/opensearchrss/1.0/"> @param args
      */
-    public static void main(String[] args) {
+    public static void main(String[] args) throws Exception {
         testAccessToken();
     }
 
@@ -65,7 +67,7 @@ public class PlayGround {
         }
     }
 
-    public static String testAccessToken() {
+    public static String testAccessToken() throws Exception {
         try {
             OAuthDoubanProvider oauth = new OAuthDoubanProvider();
             oauth.setApiKey("xxx").setSecretKey("xxx");
@@ -92,7 +94,7 @@ public class PlayGround {
         }
     }
 
-    public static void testSendingDoumail() {
+    public static void testSendingDoumail() throws Exception {
         try {
             String accessToken = testAccessToken();
             DoubanMailService service = new DoubanMailService(accessToken);
@@ -145,7 +147,7 @@ public class PlayGround {
         }
     }
 
-    public static void testPostStatus() {
+    public static void testPostStatus() throws Exception {
         try {
             String accessToken = testAccessToken();
             DoubanShuoService service = new DoubanShuoService();
@@ -179,7 +181,7 @@ public class PlayGround {
         }
     }
 
-    public static void testFollowUser() {
+    public static void testFollowUser() throws Exception {
         try {
             String accessToken = testAccessToken();
             DoubanShuoService service = new DoubanShuoService();

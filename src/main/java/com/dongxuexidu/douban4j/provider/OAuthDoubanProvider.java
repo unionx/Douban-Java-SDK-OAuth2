@@ -28,7 +28,9 @@ public class OAuthDoubanProvider {
     private String responseType = "code";
     private String grantType = "authorization_code";
 
-    private List<RequestGrantScope> scopes = new ArrayList<RequestGrantScope>();
+    @Deprecated
+    private List<RequestGrantScope> scopes = new ArrayList<>();
+    private List<String> scopeList = new ArrayList<>();
 
     static final private Logger logger = Logger.getLogger(OAuthDoubanProvider.class.getName());
 
@@ -122,8 +124,14 @@ public class OAuthDoubanProvider {
         return this;
     }
 
+    @Deprecated
     public OAuthDoubanProvider addScope(RequestGrantScope scope) {
         this.scopes.add(scope);
+        return this;
+    }
+
+    public OAuthDoubanProvider addScope(String scope) {
+        scopeList.add(scope);
         return this;
     }
 
@@ -132,11 +140,14 @@ public class OAuthDoubanProvider {
             logger.warning("Redirect url cannot be null or empty, did you forget to set it?");
             return null;
         }
+
         StringBuilder getCodeUrl = new StringBuilder(this.authUrl);
         getCodeUrl.append("?client_id=").append(this.apiKey).append("&redirect_uri=").append(this.redirectUrl).append("&response_type=").append(this.responseType);
-        if (!this.scopes.isEmpty()) {
-            getCodeUrl.append("&scope=").append(generateScopeString());
+
+        if (!scopeList.isEmpty()) {
+            getCodeUrl.append("&scope=").append(String.join(",", scopeList));
         }
+
         return getCodeUrl.toString();
     }
 
