@@ -5,10 +5,13 @@ import com.dongxuexidu.douban4j.model.app.DoubanException;
 import com.dongxuexidu.douban4j.model.book.DoubanBook;
 import com.dongxuexidu.douban4j.model.book.DoubanBookFeed;
 import com.dongxuexidu.douban4j.model.tag.DoubanTagFeed;
+import com.dongxuexidu.douban4j.utils.HttpParamHelper;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
+import org.apache.http.NameValuePair;
 
 import java.io.IOException;
+import java.util.List;
 
 
 /**
@@ -40,17 +43,43 @@ public class DoubanBookService extends DoubanService {
         return this.client.getResponseInJson(url, null, DoubanBook.class, false);
     }
 
-    public DoubanBookFeed searchBook(String q, String tag)
+    public DoubanBookFeed searchBook(String q, String tag) throws Exception {
+        return searchBook(q, tag, null, null);
+    }
+
+    public DoubanBookFeed searchBook(String q, String tag, Integer start, Integer count)
             throws DoubanException, IOException {
         String url = RequestUrls.DOUBAN_BOOK_SUBJECT_PREFIX + "/search";
-        return searchDoubanSubject(url, q, tag, null, null, DoubanBookFeed.class);
+        return searchDoubanSubject(url, q, tag, start, count, DoubanBookFeed.class);
     }
 
-    public DoubanTagFeed getBookTags(long bookId) throws Exception {
+    public DoubanTagFeed getBookTags(long bookId, Integer start, Integer count)
+            throws Exception {
         String url = RequestUrls.DOUBAN_BOOK_SUBJECT_PREFIX + "/" + bookId + "/tags";
-        return this.client.getResponseInJson(url, null, DoubanTagFeed.class, false);
+
+        return this.client.getResponseInJson(url,
+                HttpParamHelper.buildParams("start", start, "count", count),
+                DoubanTagFeed.class, false);
     }
 
+    public DoubanTagFeed getUserBookTags(String username, Integer start, Integer count)
+            throws Exception {
+        String url = RequestUrls.DOUBAN_BOOK_SUBJECT_PREFIX
+                + "/user/" + username + "/tags";
+
+        return this.client.getResponseInJson(url,
+                HttpParamHelper.buildParams("start", start, "count", count),
+                DoubanTagFeed.class, false);
+    }
+
+    public DoubanTagFeed getUserBookTags(long userid, Integer start, Integer count)
+            throws Exception {
+        String url = RequestUrls.DOUBAN_BOOK_SUBJECT_PREFIX + "/user_tags/" + userid;
+
+        return this.client.getResponseInJson(url,
+                HttpParamHelper.buildParams("start", start, "count", count),
+                DoubanTagFeed.class, false);
+    }
 
 
 }

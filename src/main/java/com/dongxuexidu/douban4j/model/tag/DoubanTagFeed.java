@@ -20,4 +20,12 @@ public class DoubanTagFeed extends DoubanFeed {
     public void setTags(List<DoubanTag> tags) {
         this.tags = tags;
     }
+
+    public void printAllTags() {
+        if (tags != null) {
+            for (DoubanTag tag : tags) {
+                System.out.println(tag.getName());
+            }
+        }
+    }
 }

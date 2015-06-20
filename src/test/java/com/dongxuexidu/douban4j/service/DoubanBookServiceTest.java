@@ -50,8 +50,16 @@ public class DoubanBookServiceTest extends TestCase {
     public void testGetBookTags() throws Exception {
         log.info("Testing getBookTags");
         long bookId = 4833802L;
-        DoubanTagFeed doubanTagFeed = doubanBookService.getBookTags(bookId);
-        assertTrue(doubanTagFeed.getTags().size() > 0);
+        DoubanTagFeed doubanTagFeed = doubanBookService.getBookTags(bookId, 20, 50);
+        assertTrue(doubanTagFeed.getTags().size() == 50);
+    }
+
+    public void testGetUserBookTags() throws Exception {
+        log.info("Testing getUserBookTags");
+        String username = "unionz";
+        DoubanTagFeed doubanTagFeed = doubanBookService.getUserBookTags(username, null, 50);
+        doubanTagFeed.printAllTags();
+        assertTrue(doubanTagFeed.getTags().size() == 50);
     }
 
 }
