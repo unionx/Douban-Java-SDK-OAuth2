@@ -17,11 +17,15 @@ public class DoubanTag implements IDoubanObject {
         return "tag";
     }
 
-    @Key("@name")
+    @Key
     private String name;
 
-    @Key("@count")
-    private String count;
+    @Key
+    private Integer count;
+
+    // title 和 name 貌似一样，没什么区别
+    @Key
+    private String title;
 
     /**
      * @return the name
@@ -40,14 +44,14 @@ public class DoubanTag implements IDoubanObject {
     /**
      * @return the count
      */
-    public String getCount() {
+    public Integer getCount() {
         return count;
     }
 
     /**
      * @param count the count to set
      */
-    public void setCount(String count) {
+    public void setCount(Integer count) {
         this.count = count;
     }
 

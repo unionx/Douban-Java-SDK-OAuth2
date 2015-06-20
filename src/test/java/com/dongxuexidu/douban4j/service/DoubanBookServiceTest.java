@@ -3,6 +3,8 @@ package com.dongxuexidu.douban4j.service;
 import com.dongxuexidu.douban4j.constants.DefaultConfigs;
 import com.dongxuexidu.douban4j.model.book.DoubanBook;
 import com.dongxuexidu.douban4j.model.book.DoubanBookFeed;
+import com.dongxuexidu.douban4j.model.tag.DoubanTag;
+import com.dongxuexidu.douban4j.model.tag.DoubanTagFeed;
 import junit.framework.TestCase;
 import org.apache.commons.lang3.builder.ToStringBuilder;
 import org.apache.commons.logging.Log;
@@ -41,13 +43,15 @@ public class DoubanBookServiceTest extends TestCase {
     public void testSearchBook() throws Exception {
         log.info("Testing searchBook");
         String q = "C语言";
-        DoubanBookService doubanBookService = new DoubanBookService();
-        DoubanBookFeed bookSearchResult = doubanBookService.searchBook(q, null);
+        DoubanBookFeed doubanBookFeed = doubanBookService.searchBook(q, null);
+        assertTrue(doubanBookFeed.getBooks().size() > 0);
+    }
 
-        log.info("Search results is:");
-        log.info(ToStringBuilder.reflectionToString(bookSearchResult));
-
-        assertTrue(bookSearchResult.getBooks().size() > 0);
+    public void testGetBookTags() throws Exception {
+        log.info("Testing getBookTags");
+        long bookId = 4833802L;
+        DoubanTagFeed doubanTagFeed = doubanBookService.getBookTags(bookId);
+        assertTrue(doubanTagFeed.getTags().size() > 0);
     }
 
 }
